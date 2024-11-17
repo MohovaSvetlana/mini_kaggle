@@ -1,5 +1,6 @@
 from enum import Enum
 
+# minimum window size
 W, H = 500, 400
 
 

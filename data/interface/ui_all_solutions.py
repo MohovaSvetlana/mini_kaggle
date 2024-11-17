@@ -39,14 +39,19 @@ class UIAllSolutions(CompetitionBars):
         header.setSectionResizeMode(4, QHeaderView.ResizeToContents)
 
         item = QTableWidgetItem(str("Id"))
+        item.setFlags(Qt.ItemIsEnabled)
         self.solutions_tw.setItem(0, 0, item)
         item = QTableWidgetItem(str("Имя отправителя"))
+        item.setFlags(Qt.ItemIsEnabled)
         self.solutions_tw.setItem(0, 1, item)
         item = QTableWidgetItem(str("Описание решения"))
+        item.setFlags(Qt.ItemIsEnabled)
         self.solutions_tw.setItem(0, 2, item)
         item = QTableWidgetItem(str("Величина ошибки"))
+        item.setFlags(Qt.ItemIsEnabled)
         self.solutions_tw.setItem(0, 3, item)
         item = QTableWidgetItem(str("Результат"))
+        item.setFlags(Qt.ItemIsEnabled)
         self.solutions_tw.setItem(0, 4, item)
 
         for row, participant in enumerate(self.solutions, start=1):
