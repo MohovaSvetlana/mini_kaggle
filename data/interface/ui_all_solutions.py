@@ -68,3 +68,5 @@ class UIAllSolutions(CompetitionBars):
 
         if self.controller.user.is_organizer:
             self.show_buttons_for_organizer()
+        if self.controller.competition.is_finished:
+            self.change_buttons_for_finished_competition()

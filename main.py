@@ -9,4 +9,3 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     cont = Controller()
     sys.exit(app.exec())
-

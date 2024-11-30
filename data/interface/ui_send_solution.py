@@ -19,7 +19,7 @@ class UISendSolution(CompetitionBars):
         self.choose_solution_btn = QPushButton("Выберите файл")
         self.description_le = QLineEdit("Описание решения")
         self.sending_btn = QPushButton("Отослать решение")
-        self.attempts_lb = QLabel(f"Осталось попыток: {5}")
+        self.attempts_lb = QLabel(f"Осталось попыток: {self.controller.competition.attempts}")
         self.attempts_lb.setMaximumHeight(25)
         self.sending_layout.addWidget(self.choose_solution_btn)
         self.sending_layout.addWidget(self.description_le)
@@ -32,3 +32,5 @@ class UISendSolution(CompetitionBars):
 
         if self.controller.user.is_organizer:
             self.show_buttons_for_organizer()
+        if self.controller.competition.is_finished:
+            self.change_buttons_for_finished_competition()

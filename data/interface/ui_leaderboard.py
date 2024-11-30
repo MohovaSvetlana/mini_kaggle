@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QWidget, \
-    QTableWidget, QTableWidgetItem, QHBoxLayout, QHeaderView, QDateEdit
+    QTableWidget, QTableWidgetItem, QHBoxLayout, QHeaderView
 
 
 from data.interface.ui_competition_bars import CompetitionBars
@@ -46,3 +46,5 @@ class UILeaderboard(CompetitionBars):
 
         if self.controller.user.is_organizer:
             self.show_buttons_for_organizer()
+        if self.controller.competition.is_finished:
+            self.change_buttons_for_finished_competition()

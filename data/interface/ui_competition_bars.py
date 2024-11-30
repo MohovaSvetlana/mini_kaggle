@@ -34,3 +34,7 @@ class CompetitionBars(PagesBar):
     def show_buttons_for_organizer(self):
         PagesBar.show_buttons_for_organizer(self)
         self.test_leaderboard_btn.show()
+
+    def change_buttons_for_finished_competition(self):
+        self.validation_leaderboard_btn.hide()
+        self.test_leaderboard_btn.show()

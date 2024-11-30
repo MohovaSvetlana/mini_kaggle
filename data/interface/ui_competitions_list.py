@@ -2,9 +2,10 @@ from PySide6.QtWidgets import QWidget, \
     QHBoxLayout, QVBoxLayout, QPushButton, QScrollArea
 from data.interface.ui_pages_bar import PagesBar
 from data.settings import Pages
+from database import DataBase
 
 
-class UICompetitionsList(PagesBar):
+class UICompetitionsList(QWidget, PagesBar):
     def __init__(self, window, controller):
 
         super().__init__()
@@ -15,10 +16,6 @@ class UICompetitionsList(PagesBar):
         self.window.setCentralWidget(self.main_widget)
         self.main_layout = QHBoxLayout(self.main_widget)
 
-        self.competitions_list = []
-        for num in range(100):
-            self.competitions_list.append(f"Cоревнование {num}")
-
         scroll = QScrollArea()
         content_widget = QWidget()
         scroll.setWidget(content_widget)
@@ -27,12 +24,13 @@ class UICompetitionsList(PagesBar):
 
         self.competitions_layout = QVBoxLayout()
         self.competitions_buttons = []
-        for competition in self.competitions_list:
-            self.competitions_buttons.append(QPushButton(competition))
-            self.competitions_layout.addWidget(self.competitions_buttons[-1])
-            self.competitions_buttons[-1].setMinimumSize(400, 40)
-            self.competitions_buttons[-1].clicked.connect(lambda:
-                                                          self.controller.change_page(Pages.overview_competition_page))
+        for competition in DataBase.get_competitions():
+            btn = QPushButton(str(competition.id) + ". " + competition.title)
+            btn.competition_id = competition.id
+            self.competitions_buttons.append(btn)
+            self.competitions_layout.addWidget(btn)
+            btn.setMinimumSize(400, 40)
+            btn.clicked.connect(self.choose_competition)
         self.main_layout.addLayout(self.pages_bar_layout)
         content_layout.addLayout(self.competitions_layout)
         self.main_layout.addLayout(content_layout)
@@ -40,3 +38,6 @@ class UICompetitionsList(PagesBar):
 
         if self.controller.user.is_organizer:
             self.show_buttons_for_organizer()
+
+    def choose_competition(self):
+        self.controller.change_page(Pages.overview_competition_page, self.sender().competition_id)

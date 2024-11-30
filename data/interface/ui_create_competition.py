@@ -6,6 +6,7 @@ from PySide6.QtWidgets import QWidget, \
 from data.interface.ui_pages_bar import PagesBar
 from data.time import Time
 from database import DataBase
+from data.settings import Pages
 
 
 class UICreateCompetition(PagesBar):
@@ -58,7 +59,7 @@ class UICreateCompetition(PagesBar):
         self.add_train_data_btn.clicked.connect(self.load_train_file)
         self.train_file_lb = QLabel()
         self.test_data_layout = QHBoxLayout()
-        self.add_test_data_btn = QPushButton("Добавить данные для тестированипя")
+        self.add_test_data_btn = QPushButton("Добавить данные для тестирования")
         self.add_test_data_btn.clicked.connect(self.load_test_file)
         self.test_file_lb = QLabel()
         self.solution_data_layout = QHBoxLayout()
@@ -125,12 +126,12 @@ class UICreateCompetition(PagesBar):
         return name_file
 
     def update_period_date(self):
-        date = Time.to_pyside_date(Time.get_date_after_days(int(self.choose_period.text())))
+        date = Time.to_pyside_date(Time().get_date_after_days(int(self.choose_period.text())))
         self.period_de.setDate(date)
 
     def add_competition_types(self):
-        for type in DataBase.get_competition_types():
-            self.choose_type_cb.addItem(type.name)
+        for competition_type in DataBase.get_competition_types():
+            self.choose_type_cb.addItem(competition_type.name)
 
     def change_metrics(self):
         self.choose_metrics_cb.clear()
@@ -143,15 +144,10 @@ class UICreateCompetition(PagesBar):
         self.metric = DataBase.get_metric_by_title(self.choose_metrics_cb.currentText())
 
     def create_competition(self):
-        if self.train_file_name and self.test_file_name and self.solution_file_name:
-            print("Создать соревнование")
-            print(f"Hазвание: {self.competition_title_le.text()}")
-            print("Условие:")
-            print(self.describe_comptition_te.toPlainText())
-            print(f"Тип соревнования: {self.competition_type.name}")
-            print(f"Метрика: {self.metric.name}")
-            print(f"Длительность: {self.choose_period.text()}")
-            print(f"Количество попыток: {self.choose_attempts.text()}")
-            print(f"Файлы для соревнования: {self.train_file_name}, {self.test_file_name}, {self.solution_file_name}")
-        else:
-            print("Файлы не выбраны")
+        if self.controller.create_competition(self.train_file_name, self.test_file_name, self.solution_file_name,
+                                              self.competition_title_le.text(),
+                                              self.describe_comptition_te.toPlainText().replace("\n", "<br>"),
+                                              self.competition_type,
+                                              self.metric, Time().get_date_after_days(int(self.choose_period.text())),
+                                              self.choose_attempts.text()):
+            self.controller.change_page(Pages.competitions_list_page)
