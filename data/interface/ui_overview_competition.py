@@ -18,7 +18,7 @@ class UIOverviewCompetition(CompetitionBars):
         self.title_le = QLineEdit(self.controller.competition.title)
         self.title_le.setEnabled(False)
         self.describe_comptition_te = QTextEdit(self.controller.competition.description)
-        self.describe_comptition_te.setEnabled(False)
+        self.describe_comptition_te.setReadOnly(True)
         self.period_lb = QLabel(f"Дата окончания: {self.controller.competition.period}")
         self.type_lb = QLabel(DataBase.get_competition_type_by_id(self.controller.competition.type).name)
         self.metrix_lb = QLabel(DataBase.get_metric_by_id(self.controller.competition.metric).name)
