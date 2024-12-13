@@ -17,21 +17,27 @@ class FileHandler:
                 n += 1
         return n
 
+    def download_submission_file(self, submission_id):
+        downloads_path = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Downloads')
+        n = self.find_n(downloads_path, f"submission{submission_id}")
+        file_path = os.path.join(os.getcwd(), "db", "submissions", f"submission{submission_id}.csv")
+        shutil.copy(file_path, f"{downloads_path}/submission{submission_id}" + (f" ({n})" if n else "") + ".csv")
+
     def download_competition_file(self, file_name, id_competition):
         downloads_path = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Downloads')
         n = self.find_n(downloads_path, f"{file_name}{id_competition}")
         file_path = os.path.join(os.getcwd(), "db", "competitions", str(id_competition), f"{file_name}.csv")
-        shutil.copy(file_path, downloads_path)
-        shutil.move(f"{downloads_path}/{file_name}.csv",
-                    f"{downloads_path}/{file_name}{id_competition}" + (f" ({n}).csv" if n else ".csv"))
+        shutil.copy(file_path, f"{downloads_path}/{file_name}{id_competition}" + (f" ({n})" if n else "") + ".csv")
 
     @staticmethod
     def create_competition_files_folder(id_competition, train_file, test_file, solution_file):
         dst = os.path.join(os.getcwd(), "db", "competitions", str(id_competition))
         os.mkdir(dst)
-        shutil.copy(train_file, dst)
-        shutil.move(f"{dst}/{os.path.split(train_file)[-1]}", f"{dst}/train.csv")
-        shutil.copy(test_file, dst)
-        shutil.move(f"{dst}/{os.path.split(test_file)[-1]}", f"{dst}/test.csv")
-        shutil.copy(solution_file, dst)
-        shutil.move(f"{dst}/{os.path.split(solution_file)[-1]}", f"{dst}/solution.csv")
+        shutil.copy(train_file, f"{dst}/train.csv")
+        shutil.copy(test_file, f"{dst}/test.csv")
+        shutil.copy(solution_file, f"{dst}/solution.csv")
+
+    @staticmethod
+    def create_submission_file(id_submission, submission_file):
+        dst = os.path.join(os.getcwd(), "db", "submissions")
+        shutil.copy(submission_file, f"{dst}/submission{id_submission}.csv")

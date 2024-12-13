@@ -3,13 +3,14 @@ from PySide6.QtWidgets import QWidget, \
 
 
 from data.interface.ui_competition_bars import CompetitionBars
+from database import DataBase
 
 
 class UILeaderboard(CompetitionBars):
-    def __init__(self, window, controller):
+    def __init__(self, window, controller, is_results=False):
         super().__init__()
         self.controller = controller
-        self.participants = [[1, "Participant 1", 0.6223], [2, "Participant 2", 1.405], [3, "Participant 3", 4.5842]]
+        self.leaderboard_data = DataBase().get_leaderboard_by_submissions(self.controller.competition.id, is_results)
 
         self.window = window
         self.main_widget = QWidget()
@@ -19,23 +20,18 @@ class UILeaderboard(CompetitionBars):
         self.leaderboard_tw = QTableWidget()
         self.leaderboard_tw.setEnabled(False)
         self.leaderboard_tw.setMinimumWidth(300)
-        self.leaderboard_tw.setRowCount(len(self.participants)+1)
-        if len(self.participants) != 0:
-            self.leaderboard_tw.setColumnCount(len(self.participants[0]))
+        self.leaderboard_tw.setRowCount(len(self.leaderboard_data))
+        self.leaderboard_tw.setColumnCount(len(self.leaderboard_data[0]))
         self.leaderboard_tw.horizontalHeader().hide()
         self.leaderboard_tw.verticalHeader().hide()
         header = self.leaderboard_tw.horizontalHeader()
-        header.setSectionResizeMode(0, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(1, QHeaderView.Stretch)
-        header.setSectionResizeMode(2, QHeaderView.ResizeToContents)
 
-        item = QTableWidgetItem(str("№"))
-        self.leaderboard_tw.setItem(0, 0, item)
-        item = QTableWidgetItem(str("Имя"))
-        self.leaderboard_tw.setItem(0, 1, item)
-        item = QTableWidgetItem(str("Оценка"))
-        self.leaderboard_tw.setItem(0, 2, item)
-        for row, participant in enumerate(self.participants, start=1):
+        for col, head_name in enumerate(self.leaderboard_data[0]):
+            item = QTableWidgetItem(head_name)
+            self.leaderboard_tw.setItem(0, col, item)
+            header.setSectionResizeMode(col, QHeaderView.Stretch if 1 <= col <= 2 else QHeaderView.ResizeToContents)
+
+        for row, participant in enumerate(self.leaderboard_data[1:], start=1):
             for col, data in enumerate(participant):
                 item = QTableWidgetItem(str(data))
                 self.leaderboard_tw.setItem(row, col, item)
