@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Все соревнования</h1>
+    {% for competition in competitions %}
+        <a class="container" style="color: black"
+           href="{{ url_for('competition.overview_competition', competition_id=competition.id) }}">
+            {{ competition.id }}. {{ competition.title }}
+        </a>
+        <br>
+    {% endfor %}
+{% endblock %}

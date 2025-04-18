@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Создание соревнования</h1>
+
+<form method="POST" enctype="multipart/form-data">
+<div class="container">
+    <h2>Название соревнования</h2>
+    <input type="text" id="title" name="title" required>
+
+    <h2>Описание соревнования</h2>
+    <textarea id="description" name="description" rows="15"></textarea>
+
+    <h2>Период в днях</h2>
+    <div class="row">
+        <input type="number" id="period" name="period"  value="1" min="1" oninput="updateEndDate()">
+        <input type="date" id="last_date" name="last_date" value="today" readonly>
+    </div>
+
+    <h2>Попыток в день</h2>
+    <input type="number" id="attempts" name="attempts" value="1" min="1">
+
+    <h2>Тип задачи</h2>
+    <select id="type" name="type" onchange="updateMetrics()"></select>
+
+    <h2>Метрика</h2>
+    <select id="metric" name="metric"></select>
+
+    <br><br>
+
+    <div class="row">
+        <p style="width: 200px;">Добавить тренировочные данные</p>
+        <input type="file" accept=".csv" id="train_file" name="train_file" required>
+    </div>
+    <div class="row">
+        <p style="width: 200px;">Добавить данные для тестирования</p>
+        <input type="file" accept=".csv" id="test_file" name="test_file" required>
+    </div>
+    <div class="row">
+        <p style="width: 200px;">Добавить решение</p>
+        <input type="file" accept=".csv" id="solution_file" name="solution_file" required>
+    </div>
+
+    <button type="submit" style="background-color: #27ae60">Создать соревнование</button>
+</div>
+</form>
+
+<script>
+    const metrics_data = {{ metrics|safe }};
+
+    function updateTypes() {
+        const type_select = document.getElementById("type");
+        Object.keys(metrics_data).forEach((type) => {
+            let option = document.createElement("option");
+            option.textContent = (type);
+            type_select.appendChild(option);
+        });
+    }
+    updateTypes();
+
+    function updateMetrics() {
+        const type = document.getElementById("type").value;
+        const metric_select = document.getElementById("metric");
+
+        metric_select.innerHTML = "";
+
+        metrics_data[type].forEach((metric) => {
+            let option = document.createElement("option");
+            option.textContent = (metric);
+            metric_select.appendChild(option);
+        });
+    }
+    updateMetrics();
+
+    function updateEndDate() {
+       const period = parseInt(document.getElementById("period").value, 10);
+       const today = new Date();
+       today.setDate(today.getDate() + period);
+       document.getElementById("last_date").value = today.toISOString().split('T')[0];
+    }
+    updateEndDate();
+</script>
+
+
+{% endblock %}

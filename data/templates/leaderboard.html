@@ -1,0 +1,15 @@
+{% extends "base_competition.html" %}
+
+{% block content_competition %}
+<tbody>
+    <table>
+    {% for row in leaderboard %}
+        <tr>
+            {% for el in row %}
+                <td>{{ (el|string)[:50] }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+  </table>
+</tbody>
+{% endblock %}

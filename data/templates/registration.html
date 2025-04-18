@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="main_page">
+    <div class="container" style="margin: 10%">
+        <form action="" method="post">
+
+            <h2>
+                {{ form.login.label }}<br>
+                {{ form.login(class="form-control") }}<br>
+                {% for error in form.login.errors %}
+                    <div> {{ error }} </div>
+                {% endfor %}
+            </h2>
+
+            <h2>
+                {{ form.password.label }}<br>
+                {{ form.password(class="form-control") }}<br>
+                {% for error in form.password.errors %}
+                    <div> {{ error }} </div>
+                {% endfor %}
+            </h2>
+
+            <div class="row">
+                <h2> {{ form.is_organizer.label }} </h2>
+                {{ form.is_organizer(class="form-control", style="width: 25px") }}
+                {% for error in form.password.errors %}
+                    <div> {{ error }} </div>
+                {% endfor %}
+            </div>
+
+            <h2>{{ form.submit(type="submit", class="button") }}</h2>
+            <h2>{{ message }}</h2>
+        </form>
+    </div>
+</div>
+{% endblock %}
+

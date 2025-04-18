@@ -1,0 +1,26 @@
+{% extends "base_competition.html" %}
+
+{% block content_competition %}
+<h1>{{ competition.title }}</h1>
+<h2>Дата окончания: {{ competition.period }}</h2>
+<h2>Тип соревнования: {{ db.get_competition_type_by_id(competition.type).name }}</h2>
+<h2>Метрика: {{ db.get_metric_by_id(competition.metric).name }}</h2>
+<div class="container"> <div id="description"> </div> </div>
+<script>
+    document.getElementById('description').innerHTML = `{{ competition.description|safe }}`
+</script>
+
+<br><div class="container">
+    <a style="color: black"
+       href="{{ url_for('competition.download_competition_file', competition_id=competition.id, file_name='train') }}">
+        Скачать тренировочные данные
+    </a>
+</div>
+
+<br><div class="container">
+    <a style="color: black"
+       href="{{ url_for('competition.download_competition_file', competition_id=competition.id, file_name='test') }}">
+        Скачать данные для тестирования
+    </a>
+</div>
+{% endblock %}

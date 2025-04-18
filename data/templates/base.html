@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image.png" sizes="25x25" href="{{ url_for('static', filename='images/icon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <header>
+        <div><h1>Mini kaggle</h1></div>
+        {% if g.user %}
+            <div class="row">
+                <h1> {{ g.user.login }}</h1>
+                <button style="background-color: #f25f73"><a href="{{ url_for('user.logout') }}">Выйти</a></button>
+            </div>
+        {% else %}
+            <button style="max-width: 80px;"><a href="{{ url_for('user.login') }}">Войти</a></button>
+        {% endif %}
+    </header>
+
+
+    {% if g.user %}
+        <section class="sidebar">
+            <a href="{{ url_for('competition.competitions_list') }}">Cоревнования</a>
+            {% if g.user.is_organizer %}
+                <a href="{{ url_for('competition.create_competition') }}">Создать соревнование</a>
+                <a href="{{ url_for('user.registration') }}">Добавить пользователя</a>
+            {% endif %}
+        </section>
+
+        <div style="margin: 70px 170px 170px 170px;">
+    {% else %}
+        <div style="margin: 1% 10%;">
+    {% endif %}
+
+    <div class="text-center" style="padding: 5% 0 5% 5%">
+        {% block content %}{% endblock %}
+    </div>
+    </div>
+</body>
+</html>

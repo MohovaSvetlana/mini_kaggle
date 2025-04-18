@@ -1,0 +1,13 @@
+{% extends "base_competition.html" %}
+
+{% block content_competition %}
+<form method="post" enctype="multipart/form-data">
+<div class="container">
+    <h1>Отправка решения</h1>
+    <h2>Добавте описание своему решению</h2>
+    <input id="description" name="description">
+    <input type="file" id="submission_file" name="submission_file" required>
+    <button type="submit">Отправить решение</button>
+</div>
+</form>
+{% endblock %}

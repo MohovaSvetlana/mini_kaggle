@@ -1,5 +1,4 @@
 import sqlalchemy
-
 from data.db import Base
 
 

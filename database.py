@@ -60,8 +60,8 @@ class DataBase:
         db.add(metric)
         db.commit()
 
-    def check_log_in(self, login, password):
-        user = self.get_user_by_login(login)
+    @staticmethod
+    def check_log_in(user, password):
         if user and check_password_hash(user.password, password):
             return True
         return False
@@ -107,6 +107,10 @@ class DataBase:
         return Competition.query.filter(Competition.id == competition_id).first()
 
     @staticmethod
+    def get_submission_by_id(submission_id):
+        return Submission.query.filter(Submission.id == submission_id).first()
+
+    @staticmethod
     def get_unchecked_submissions():
         return Submission.query.filter(Submission.is_checked == 0)
 
@@ -115,7 +119,6 @@ class DataBase:
         data = [["Id", "Дата отправки", "Имя отправителя", "Описание решения", "Оценка"]]
         if user.is_organizer:
             data[0].append("Результат")
-
         for submission in Submission.query.filter(and_(Submission.competition == competition.id,
                                                   (Submission.author == user.id if not user.is_organizer else True))):
             data.append([submission.id, submission.date, DataBase.get_user_by_id(submission.author).login,
@@ -131,7 +134,8 @@ class DataBase:
                  Submission.competition == competition_id,
                  Submission.date == Time.get_current_date())).scalar()
 
-    def get_leaderboard_by_submissions(self, competition_id, is_result):
+    @staticmethod
+    def get_leaderboard_by_submissions(competition_id, is_result):
         competition = DataBase.get_competition_by_id(competition_id)
         competition_finished_date, competition_type = competition.period, competition.type
         score = Submission.test_score if is_result else Submission.validation_score
@@ -152,7 +156,7 @@ class DataBase:
                                                                    score == best_score.c.best_score)
                                                   ).order_by(order))
 
-        return self._get_leaderboard_data(best_submissions, is_result)
+        return DataBase._get_leaderboard_data(best_submissions, is_result)
 
     @staticmethod
     def _get_leaderboard_data(best_submissions, is_result):

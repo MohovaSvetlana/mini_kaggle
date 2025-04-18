@@ -1,11 +1,9 @@
-import sys
-from PySide6.QtWidgets import QApplication
 from data.db import init_db
-from data.controller import Controller
-
+from data.app_init import create_app
 
 if __name__ == '__main__':
     init_db()
-    app = QApplication(sys.argv)
-    cont = Controller()
-    sys.exit(app.exec())
+    app = create_app()
+    app.run()
+else:
+    gunicorn_app = create_app()

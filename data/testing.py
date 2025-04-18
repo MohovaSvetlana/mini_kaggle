@@ -6,7 +6,7 @@ from database import DataBase
 import os
 
 
-class TestingSolutions(Thread):
+class TestingSubmissions(Thread):
 
     def __init__(self):
         super().__init__()

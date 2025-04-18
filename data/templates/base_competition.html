@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="justify-content: space-between;">
+    <div>{% block content_competition %} {% endblock %}</div>
+    <aside class="sidebar" style="left: calc(100vw - 160px)">
+        <a href="{{ url_for('competition.overview_competition', competition_id=competition.id) }}">О соревновании</a>
+        <a href="{{ url_for('competition.send_submission', competition_id=competition.id) }}">Отправить решение</a>
+        <a href="{{ url_for('competition.all_submissions', competition_id=competition.id) }}">Все решения</a>
+        {% if not competition.is_finished %}
+            <a href="{{ url_for('competition.leaderboard', competition_id=competition.id) }}">Таблица лидеров</a>
+        {% endif %}
+        {% if competition.is_finished or g.user.is_organizer %}
+            <a href="{{ url_for('competition.results', competition_id=competition.id) }}">Результаты</a>
+        {% endif %}
+    </aside>
+</div>
+{% endblock %}

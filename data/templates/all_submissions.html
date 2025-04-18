@@ -1,0 +1,30 @@
+{% extends "base_competition.html" %}
+
+{% block content_competition %}
+<tbody>
+    <table>
+
+        <tr>
+            {% for el in solutions[0] %}
+                <td>{{ el }}</td>
+            {% endfor %}
+        </tr>
+
+        {% for solution in solutions[1:] %}
+            <tr>
+                <td>
+                    <button><a href="{{ url_for('competition.download_submission_file', submission_id=solution[0]) }}">
+                        {{ solution[0] }}
+                    </a></button>
+                </td>
+
+                {% for el in solution[1:] %}
+                    <td>{{ (el|string)[:50] }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+
+    </table>
+</tbody>
+
+{% endblock %}
