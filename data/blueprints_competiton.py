@@ -1,7 +1,8 @@
 import functools
 
-from flask import (Blueprint, session, g, render_template, redirect, request, url_for, send_file)
+from flask import (Blueprint, g, render_template, redirect, request, url_for, send_file)
 from io import BytesIO
+import base64
 import json
 import os
 
@@ -9,6 +10,7 @@ from database import DataBase
 from data.blueprints_user import login_required
 from data.time import Time
 from data.testing import TestingSubmissions
+from data.overview_data import OverviewData
 
 
 bp = Blueprint("competition", __name__)
@@ -125,6 +127,52 @@ def results():
         table = DataBase.get_leaderboard_by_submissions(g.competition.id, True)
         return render_template("leaderboard.html", leaderboard=table, competition=g.competition, title="Результаты")
     return redirect(url_for("competition.leaderboard", competition_id=g.competition.id))
+
+
+@bp.route("/describe_data/<competition_id>")
+@competition_required
+def describe_data():
+    return render_template("describe_data.html", competition=g.competition, title="Описание данных",
+                           data_head=OverviewData.get_head_data(g.competition.id),
+                           described_data=OverviewData.get_described_data(g.competition.id))
+
+
+@bp.route("/generate_line_chart/<competition_id>", methods=['GET', 'POST'])
+@competition_required
+def generate_line_chart():
+    data = None
+    if request.method == "POST":
+        columns = [*request.form.keys()][1:]
+        if request.form['index'] in request.form:
+            columns.remove(request.form['index'])
+        data = OverviewData.line_chart(g.competition.id, request.form['index'], columns)
+
+    return render_plots(data,
+                        rows=OverviewData.get_columns_data(g.competition.id),
+                        page="generate_line_chart.html")
+
+
+@bp.route("/generate_scatterplot/<competition_id>", methods=['GET', 'POST'])
+@competition_required
+def generate_scatterplot():
+    data = None
+    if request.method == "POST":
+        data = OverviewData.scatterplot(g.competition.id, request.form['x'], request.form['y'],
+                                        request.form['hue'] if 'hue' in request.form else None)
+
+    return render_plots(data,
+                        rows=OverviewData.get_columns_data(g.competition.id),
+                        page="generate_scatterplot.html")
+
+
+def render_plots(data: BytesIO, page, rows=None):
+    if data:
+        data = data.read()
+        data = base64.b64encode(data).decode()
+        return render_template(page, competition=g.competition, title="Построение графиков",
+                               plot=f'<img src="data:image/png;base64,{data}">', rows=rows)
+    else:
+        return render_template(page, competition=g.competition, title="Построение графиков",  rows=rows)
 
 
 @bp.route('/download/<competition_id>/<file_name>')

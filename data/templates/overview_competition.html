@@ -2,9 +2,12 @@
 
 {% block content_competition %}
 <h1>{{ competition.title }}</h1>
-<h2>Дата окончания: {{ competition.period }}</h2>
-<h2>Тип соревнования: {{ db.get_competition_type_by_id(competition.type).name }}</h2>
-<h2>Метрика: {{ db.get_metric_by_id(competition.metric).name }}</h2>
+
+    <p>Дата окончания: {{ competition.period }}</p>
+    <p>Тип соревнования: {{ db.get_competition_type_by_id(competition.type).name }}</p>
+    <p>Метрика: {{ db.get_metric_by_id(competition.metric).name }}</p>
+
+<br>
 <div class="container"> <div id="description"> </div> </div>
 <script>
     document.getElementById('description').innerHTML = `{{ competition.description|safe }}`

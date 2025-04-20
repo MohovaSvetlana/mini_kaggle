@@ -1,0 +1,45 @@
+{% extends "base_competition.html" %}
+
+{% block content_competition %}
+
+
+<div id="plot"> </div>
+<script>document.getElementById('plot').innerHTML = `{{ plot|safe }}`</script>
+<br>
+
+<form method="post">
+    <div class="container">
+        <h1>Значения на оси Ox:</h1>
+        {% for row_title in rows %}
+        <div class="row">
+            <input type="radio" id="{{row_title}}_x" value="{{row_title}}" name="x" style="max-width: 20px;" checked>
+            <label for="{{row_title}}_x"><p>{{ row_title }}</p></label>
+        </div>
+        {% endfor %}
+        <script>document.getElementById('{{rows[0]}}_x').checked = true;</script>
+        <br>
+
+        <h1>Значения на оси Oy</h1>
+        {% for row_title in rows %}
+        <div class="row">
+            <input type="radio" id="{{row_title}}_y" value="{{row_title}}" name="y" style="max-width: 20px;">
+            <label for="{{row_title}}_y"><p>{{ row_title }}</p></label>
+        </div>
+        {% endfor %}
+        <script>document.getElementById('{{rows[0]}}_y').checked = true;</script>
+        <br>
+
+        <h1>Раскрасить по категориям (необязательно):</h1>
+        {% for row_title in rows %}
+        <div class="row">
+            <input type="radio" id="{{row_title}}_hue" value="{{row_title}}" name="hue" style="max-width: 20px;">
+            <label for="{{row_title}}_hue"><p>{{ row_title }}</p></label>
+        </div>
+        {% endfor %}
+
+        <button type="submit">Построить</button>
+    </div>
+</form>
+
+
+{% endblock %}

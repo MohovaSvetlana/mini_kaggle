@@ -1,0 +1,35 @@
+{% extends "base_competition.html" %}
+
+{% block content_competition %}
+<h1>Пример данных:</h1>
+<tbody>
+    <table>
+    {% for row in data_head %}
+        <tr>
+            {% for el in row %}
+                <td>{{ (el|string)[:25] }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+  </table>
+<br>
+
+<h1>Описание:</h1>
+  <table>
+    {% for row in described_data %}
+        <tr>
+            {% for el in row %}
+                <td>{{ (el|string)[:10] }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+  </table>
+</tbody>
+<br><br>
+
+<h2>Для более полного изучения данных вы можете построить несколько графиков:</h2>
+<button style="max-width: 300px;"><a href="{{ url_for('competition.generate_line_chart', competition_id=competition.id) }}">
+    Линейная диаграмма</a></button> <br>
+<button style="max-width: 300px;"><a href="{{ url_for('competition.generate_scatterplot', competition_id=competition.id) }}">
+    Диаграмма рассеяния</a></button> <br>
+{% endblock %}

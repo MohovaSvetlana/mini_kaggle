@@ -13,6 +13,7 @@
         {% if competition.is_finished or g.user.is_organizer %}
             <a href="{{ url_for('competition.results', competition_id=competition.id) }}">Результаты</a>
         {% endif %}
+        <a href="{{ url_for('competition.describe_data', competition_id=competition.id) }}">Описание данных</a>
     </aside>
 </div>
 {% endblock %}

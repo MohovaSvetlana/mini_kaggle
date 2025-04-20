@@ -1,0 +1,35 @@
+{% extends "base_competition.html" %}
+
+{% block content_competition %}
+
+
+<div id="plot"> </div>
+<script>document.getElementById('plot').innerHTML = `{{ plot|safe }}`</script>
+<br>
+
+<form method="post">
+    <div class="container">
+        <h1>Значения на оси Ox</h1>
+        {% for row_title in rows %}
+        <div class="row">
+            <input type="radio" id="{{row_title}}_index" value="{{row_title}}" name="index" style="max-width: 20px;">
+            <label for="{{row_title}}"><p>{{ row_title }}</p></label>
+        </div>
+        {% endfor %}
+        <script>document.getElementById('{{rows[0]}}_index').checked = true;</script>
+        <br>
+
+        <h1>Значения на оси Oy</h1>
+        {% for row_title in rows %}
+        <div class="row">
+            <input type="checkbox" id="{{row_title}}"  name="{{row_title}}" style="max-width: 20px;">
+            <label for="{{row_title}}"><p>{{ row_title }}</p></label>
+        </div>
+        {% endfor %}
+
+        <button type="submit">Построить</button>
+    </div>
+</form>
+
+
+{% endblock %}
