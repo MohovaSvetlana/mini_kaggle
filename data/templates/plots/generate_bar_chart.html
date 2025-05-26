@@ -1,0 +1,55 @@
+{% extends "base_competition.html" %}
+
+{% block content_competition %}
+
+
+<div id="plot"> </div>
+<script>document.getElementById('plot').innerHTML = `{{ plot|safe }}`</script>
+<br>
+
+<h1>Столбчатая диаграмма</h1>
+
+<div class="container">
+    <details>
+    <summary>Описание</summary>
+        <br>
+        Столбчатые диаграммы используются для сравнения непрерывных<br>
+        переменных соответсвующих различным группам.<br>
+        Столбцы будут показывать среднее значение, <br>
+        а чёрные линии над ними - 95% доверительный интервал.<br>
+        <br>
+        Группы лучше всего задать категориальной переменной.<br>
+        Но если выбрать вместо неё непрерывную, то на графике отобразятся<br>
+        15 столбцов, отвечающие первым строкам.
+    </details>
+</div>
+<br>
+
+<form method="post">
+    <div class="container">
+        <h1>Значения на оси Ox</h1>
+        {% for row_title_x in rows %}
+        <div class="row">
+            <input type="radio" id="{{row_title_x}}_x" value="{{row_title_x}}" name="x" style="max-width: 20px;">
+            <label for="{{row_title_x}}_x"><p>{{ row_title_x }}</p></label>
+        </div>
+        {% endfor %}
+        <script>document.getElementById('{{rows[0]}}_x').checked = true;</script>
+        <br>
+
+        <h1>Значения на оси Oy</h1>
+        {% for row_title_y in rows %}
+        <div class="row">
+            <input type="radio" id="{{row_title_y}}_y" value="{{row_title_y}}" name="y" style="max-width: 20px;">
+            <label for="{{row_title_y}}_y"><p>{{ row_title_y }}</p></label>
+        </div>
+        {% endfor %}
+        <script>document.getElementById('{{rows[0]}}_y').checked = true;</script>
+        <br>
+
+        <button type="submit">Построить</button>
+    </div>
+</form>
+
+
+{% endblock %}

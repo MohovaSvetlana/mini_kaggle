@@ -1,0 +1,54 @@
+{% extends "base_competition.html" %}
+
+{% block content_competition %}
+
+
+<div id="plot"> </div>
+<script>document.getElementById('plot').innerHTML = `{{ plot|safe }}`</script>
+<br>
+
+<h1>Тепловая карта</h1>
+
+<div class="container">
+    <details>
+    <summary>Описание</summary>
+        <br>
+        Тепловые карты используются для выявления закономерностей<br>
+        в данных, маркируемых цветами.<br>
+        Данное представление строится по индексному столбцу, которому<br>
+        желательно быть котегориальной переменной.<br>
+        <br>
+        Из-за особенностей соревнований индексное множество должно быть<br>
+        только непрерывной переменной. Поэтому тепловая карта будет<br>
+        отображать 15 первых строк.<br>
+        <br>
+        Выбираемые столбцы должны быть числового типа,<br>
+        иначе будет построен пустой график.<br>
+    </details>
+</div>
+<br>
+
+<form method="post">
+    <div class="container">
+
+        <h1>Значения</h1>
+        {% for row_title in rows[1:] %}
+        <div class="row">
+            <input type="checkbox" id="{{row_title}}"  name="{{row_title}}" style="max-width: 20px;">
+            <label for="{{row_title}}"><p>{{ row_title }}</p></label>
+        </div>
+        {% endfor %}
+
+        <br>
+
+        <div class="row">
+            <input type="checkbox" id="annot" name="annot" style="max-width: 20px;">
+            <label for="annot"><p>Добавить отображение значений в ячейках</p></label>
+        </div>
+
+        <button type="submit">Построить</button>
+    </div>
+</form>
+
+
+{% endblock %}

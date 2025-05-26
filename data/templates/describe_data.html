@@ -1,8 +1,10 @@
 {% extends "base_competition.html" %}
 
 {% block content_competition %}
-<h1>Пример данных:</h1>
 <tbody>
+<h1>Пример данных:</h1>
+
+<div style="overflow-x: auto;">
     <table>
     {% for row in data_head %}
         <tr>
@@ -12,9 +14,12 @@
         </tr>
     {% endfor %}
   </table>
+</div>
 <br>
 
 <h1>Описание:</h1>
+
+<div style="overflow-x: auto;">
   <table>
     {% for row in described_data %}
         <tr>
@@ -24,12 +29,68 @@
         </tr>
     {% endfor %}
   </table>
-</tbody>
+</div>
+<br>
+<div class="container">
+    <details>
+    <summary>Пояснение</summary>
+        <h2>По каждому столбцу даны следующие характеристики:</h2>
+        <ul>
+            <li>count - количество не пустых строк</li>
+            <li>mean  - среднее значение</li>
+            <li>std   - стандартное отклонение</li>
+            <li>min   - наименьшее значение</li>
+            <li>25%   - 25-ый процентиль</li>
+            <li>50%   - медиана (50-ый процентиль)</li>
+            <li>75%   - 75-ый процентиль</li>
+            <li>max   - наибольшее значение</li>
+        </ul>
+    </details>
+</div>
+<br>
+
 <br><br>
 
-<h2>Для более полного изучения данных вы можете построить несколько графиков:</h2>
-<button style="max-width: 300px;"><a href="{{ url_for('competition.generate_line_chart', competition_id=competition.id) }}">
-    Линейная диаграмма</a></button> <br>
-<button style="max-width: 300px;"><a href="{{ url_for('competition.generate_scatterplot', competition_id=competition.id) }}">
-    Диаграмма рассеяния</a></button> <br>
+<h2>Для более полного изучения данных можете построить несколько графиков:</h2>
+<br>
+<div class="container">
+    <details>
+    <summary>Термины</summary>
+        <br>
+        Типы переменных:
+        <ul>
+            <li>Номинальные  (Nominal)  - представляют определённые категории без порядка.</li>
+            <li>Порядковые   (Ordinal)  - можно пронумеровать от наименьшего к наибольшему без обозначения расстояния между ними.</li>
+            <li>Интервальные (Interval) - имеют порядок и равные интервалы, но нет нуля.</li>
+            <li>Отношение    (Ratio)    - имеют порядок и равные интервалы. Ноль есть и обозначает отсутствие характеристики.</li>
+        </ul>
+        <br>
+        К категориальным переменным относятся номитальные.<br>
+        К непрерывным - интервальные и отношение.<br>
+        Порядковые переменные могут быть как категориальными, так и непрерывными.
+    </details>
+</div>
+<br>
+
+<h2>Тенденции: </h2>
+<a href="{{ url_for('plots.generate_line_chart', competition_id=competition.id) }}"><button style="max-width: 300px; background-color: #31a1c7;">
+    Линейная диаграмма</button></a> <br>
+
+<h2>Отношение: </h2>
+<a href="{{ url_for('plots.generate_scatterplot', competition_id=competition.id) }}"><button style="max-width: 300px; background-color: #e26a2c;">
+    Диаграмма рассеяния</button></a> <br>
+<a href="{{ url_for('plots.generate_categorical_scatterplot', competition_id=competition.id) }}"><button style="max-width: 300px; background-color: #e26a2c;">
+    Категориальная диаграмма рассеяния</button></a> <br>
+<a href="{{ url_for('plots.generate_bar_chart', competition_id=competition.id) }}"><button style="max-width: 300px; background-color: #e26a2c;">
+    Столбчатая диаграмма</button></a> <br>
+<a href="{{ url_for('plots.generate_heatmaps', competition_id=competition.id) }}"><button style="max-width: 300px; background-color: #e26a2c;">
+    Тепловая карта</button></a> <br>
+
+<h2>Распределение: </h2>
+<a href="{{ url_for('plots.generate_histogram', competition_id=competition.id) }}"><button style="max-width: 300px; background-color: #8e44ad;">
+    Гистограмма</button></a> <br>
+<a href="{{ url_for('plots.generate_density_plot', competition_id=competition.id) }}"><button style="max-width: 300px; background-color: #8e44ad">
+    График распределения</button></a> <br>
+
+</tbody>
 {% endblock %}

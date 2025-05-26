@@ -2,20 +2,46 @@ import functools
 
 from flask import (Blueprint, g, render_template, redirect, request, url_for, send_file)
 from io import BytesIO
-import base64
 import json
-import os
 
 from database import DataBase
 from data.blueprints_user import login_required
 from data.time import Time
 from data.testing import TestingSubmissions
 from data.overview_data import OverviewData
-
+from data.file_handler import FileHandler
 
 bp = Blueprint("competition", __name__)
 testing_thread = TestingSubmissions()
 testing_thread.run()
+
+
+@bp.before_app_request
+def load_competition():
+    g.competition = None
+
+
+def competition_required(func):
+
+    @functools.wraps(func)
+    def wrapped_func(competition_id):
+        if g.competition is None or g.competiton.id != competition_id:
+            g.competition = DataBase.get_competition_by_id(competition_id)
+        _check_competition_finished(g.competition)
+        return func()
+
+    return wrapped_func
+
+
+def _recheck_competition(competition_id):
+    DataBase.reset_all_scores_to_submissions(competition_id)
+    testing_thread.run()
+
+
+def _check_competition_finished(competition):
+    if not competition.is_finished and competition.period < Time.get_current_date():
+        DataBase.finish_competition(competition)
+        _recheck_competition(competition.id)
 
 
 @bp.route("/")
@@ -34,18 +60,16 @@ def competitions_list():
 @login_required
 def create_competition():
     if request.method == "POST":
-        id_competition = DataBase.add_new_competition(request.form['title'],
+        competition_id = DataBase.add_new_competition(request.form['title'],
                                                       request.form['description'].replace("\r\n", "<br>"),
                                                       DataBase.get_competition_type_by_title(request.form['type']).id,
                                                       DataBase.get_metric_by_title(request.form['metric']).id,
                                                       Time.get_date_after_days(int(request.form['period'])),
                                                       int(request.form['attempts']))
 
-        dst = os.path.join(os.getcwd(), "db", "competitions", str(id_competition))
-        os.mkdir(dst)
-        request.files['train_file'].save(os.path.join(dst, "train.csv"))
-        request.files['test_file'].save(os.path.join(dst, "test.csv"))
-        request.files['solution_file'].save(os.path.join(dst, "solution.csv"))
+        FileHandler.create_competition_files_folder(competition_id, request.files['train_file'],
+                                                    request.files['test_file'], request.files['solution_file'])
+
         return redirect(url_for("competition.competitions_list"))
 
     metrics = dict()
@@ -55,28 +79,14 @@ def create_competition():
         if g.user.is_organizer else redirect(url_for("competition.competitions_list"))
 
 
-@bp.before_app_request
-def load_competition():
-    g.competition = None
-
-
-def competition_required(func):
-
-    @functools.wraps(func)
-    def wrapped_func(competition_id):
-        if g.competition is None or g.competiton.id != competition_id:
-            g.competition = DataBase.get_competition_by_id(competition_id)
-        check_competition_finished(g.competition)
-        return func()
-
-    return wrapped_func
-
-
-def check_competition_finished(competition):
-    if not competition.is_finished and competition.period < Time.get_current_date():
-        DataBase.finish_competition(competition)
-        DataBase.reset_all_scores_to_submissions(competition.id)
-        testing_thread.run()
+@bp.route("/delete_competition/<competition_id>")
+@login_required
+@competition_required
+def delete_competition():
+    if g.user.is_organizer:
+        DataBase.delete_competition(g.competition.id)
+        return redirect(url_for("competition.competitions_list"))
+    return 0
 
 
 @bp.route("/overview_competition/<competition_id>")
@@ -90,15 +100,15 @@ def overview_competition():
 @login_required
 @competition_required
 def send_submission():
-
-    if request.method == "POST":
-        id_submission = DataBase.add_new_submission(g.user.id, g.competition.id, request.form['description'])
-        dst = os.path.join(os.getcwd(), "db", "submissions", f"submission{id_submission}.csv")
-        request.files['submission_file'].save(dst)
+    attempts = g.competition.attempts - DataBase.get_number_of_today_submissions(g.user.id, g.competition.id)
+    if request.method == "POST" and attempts > 0:
+        submission_id = DataBase.add_new_submission(g.user.id, g.competition.id, request.form['description'])
+        FileHandler.create_submission_file(submission_id, request.files['submission_file'])
         testing_thread.run()
-        return redirect(url_for("competition.all_submissions", competition_id=g.competition.id))
+        return redirect(url_for("competition.all_submissions", attempts=attempts, competition_id=g.competition.id))
 
-    return render_template("send_submission.html", competition=g.competition, title="Отправить решение")
+    return render_template("send_submission.html", competition=g.competition,
+                           attempts=attempts, title="Отправить решение")
 
 
 @bp.route("/all_submissions/<competition_id>")
@@ -137,57 +147,28 @@ def describe_data():
                            described_data=OverviewData.get_described_data(g.competition.id))
 
 
-@bp.route("/generate_line_chart/<competition_id>", methods=['GET', 'POST'])
+@bp.route("/recheck/<competition_id>")
 @competition_required
-def generate_line_chart():
-    data = None
-    if request.method == "POST":
-        columns = [*request.form.keys()][1:]
-        if request.form['index'] in request.form:
-            columns.remove(request.form['index'])
-        data = OverviewData.line_chart(g.competition.id, request.form['index'], columns)
-
-    return render_plots(data,
-                        rows=OverviewData.get_columns_data(g.competition.id),
-                        page="generate_line_chart.html")
-
-
-@bp.route("/generate_scatterplot/<competition_id>", methods=['GET', 'POST'])
-@competition_required
-def generate_scatterplot():
-    data = None
-    if request.method == "POST":
-        data = OverviewData.scatterplot(g.competition.id, request.form['x'], request.form['y'],
-                                        request.form['hue'] if 'hue' in request.form else None)
-
-    return render_plots(data,
-                        rows=OverviewData.get_columns_data(g.competition.id),
-                        page="generate_scatterplot.html")
-
-
-def render_plots(data: BytesIO, page, rows=None):
-    if data:
-        data = data.read()
-        data = base64.b64encode(data).decode()
-        return render_template(page, competition=g.competition, title="Построение графиков",
-                               plot=f'<img src="data:image/png;base64,{data}">', rows=rows)
-    else:
-        return render_template(page, competition=g.competition, title="Построение графиков",  rows=rows)
+def recheck():
+    _recheck_competition(g.competition.id)
+    return redirect(url_for("competition.all_submissions", competition_id=g.competition.id))
 
 
 @bp.route('/download/<competition_id>/<file_name>')
 def download_competition_file(competition_id, file_name):
     if g.user.is_organizer or file_name in ("train", "test"):
-        file_path = os.path.join(os.getcwd(), "db", "competitions", str(competition_id), f"{file_name}.csv")
-        file_name += "_" + str(competition_id) + ".csv"
-        return download(file_path, file_name)
+        if file_name == "train":  file_path = FileHandler.get_competition_train_file_path(competition_id)
+        elif file_name == "test": file_path = FileHandler.get_competition_test_file_path(competition_id)
+        else:                     file_path = FileHandler.get_competition_submission_file_path(competition_id)
+
+        return download(file_path, file_name + "_" + str(competition_id) + ".csv")
     return 0
 
 
 @bp.route('/download/submission/<submission_id>')
 def download_submission_file(submission_id):
     if g.user.id == DataBase.get_submission_by_id(submission_id).author or g.user.is_organizer:
-        file_path = os.path.join(os.getcwd(), "db", "submissions", f"submission{submission_id}.csv")
+        file_path = FileHandler.get_competition_submission_file_path(submission_id)
         return download(file_path, "submission_" + str(submission_id) + ".csv")
     return 0
 

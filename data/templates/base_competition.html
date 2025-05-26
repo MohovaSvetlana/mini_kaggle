@@ -3,7 +3,7 @@
 {% block content %}
 <div style="justify-content: space-between;">
     <div>{% block content_competition %} {% endblock %}</div>
-    <aside class="sidebar" style="left: calc(100vw - 160px)">
+    <aside class="sidebar" style="left: calc(100vw - 175px)">
         <a href="{{ url_for('competition.overview_competition', competition_id=competition.id) }}">О соревновании</a>
         <a href="{{ url_for('competition.send_submission', competition_id=competition.id) }}">Отправить решение</a>
         <a href="{{ url_for('competition.all_submissions', competition_id=competition.id) }}">Все решения</a>
@@ -14,6 +14,36 @@
             <a href="{{ url_for('competition.results', competition_id=competition.id) }}">Результаты</a>
         {% endif %}
         <a href="{{ url_for('competition.describe_data', competition_id=competition.id) }}">Описание данных</a>
+        <hr>
+        {% if g.user.is_organizer %}
+        <a href="{{ url_for('competition.recheck', competition_id=competition.id) }}" style="color: #f25f73">
+            Перепроверить результаты</a>
+        <a onclick="PopUpShow()" style="color: #f25f73">
+            Удалить соревнование</a>
+        {% endif %}
     </aside>
 </div>
+
+
+{% if g.user.is_organizer %}
+<div id="popup" class="container" style="top:100px; position:fixed;">
+    <h1>Вы действительно хотите удалить соревнование?</h1>
+
+    <div class="row">
+        <button style="background-color: #f25f73"><a href="{{ url_for('competition.delete_competition', competition_id=competition.id) }}">
+            Да</a></button>
+        <button onclick="PopUpHide()">Нет</button>
+    </div>
+</div>
+
+<script>
+    PopUpHide();
+    function PopUpShow(){
+        document.getElementById("popup").style.visibility = 'visible';
+    }
+    function PopUpHide(){
+        document.getElementById("popup").style.visibility = 'hidden';
+    }
+</script>
+{% endif %}
 {% endblock %}

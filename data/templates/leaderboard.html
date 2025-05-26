@@ -2,6 +2,7 @@
 
 {% block content_competition %}
 <tbody>
+<div style="overflow-x: auto;">
     <table>
     {% for row in leaderboard %}
         <tr>
@@ -11,5 +12,6 @@
         </tr>
     {% endfor %}
   </table>
+</div>
 </tbody>
 {% endblock %}

@@ -5,6 +5,7 @@ from data.models.competitions import Competition
 from data.models.submissions import Submission
 
 from data.time import Time
+from data.file_handler import FileHandler
 
 from data.db import db_session as db
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -189,4 +190,13 @@ class DataBase:
             submission.validation_score = None
             submission.test_score = None
             submission.is_checked = False
+        db.commit()
+
+    @staticmethod
+    def delete_competition(competition_id):
+        for submission in Submission.query.filter(Submission.competition == competition_id):
+            FileHandler.delete_submission_file(submission.id)
+        Submission.query.filter(Submission.competition == competition_id).delete()
+        FileHandler.delete_competition_file(competition_id)
+        Competition.query.filter(Competition.id == competition_id).delete()
         db.commit()

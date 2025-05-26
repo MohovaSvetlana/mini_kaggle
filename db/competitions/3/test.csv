@@ -1,0 +1,501 @@
+Id,Salary,Gender,Age,City,Education,YearsOfExperience,Remote,Department,Position
+756493,,male,64,Moscow,Magistracy,16,No,Finance,Senior Accountant
+725434,,male,51,Saint-Petersburg,Bachelor,2,Yes,HR,HR Specialist
+523098,,female,45,Moscow,Magistracy,5,No,Finance,Financial Analyst
+937886,,female,26,Nizhniy Novgorod,Collage,5,No,IT,Junior Software Engineer
+738903,,male,52,Krasnoyarsk,Collage,28,No,Marketing,Digital Marketing Specialist
+287738,,female,32,Nizhniy Novgorod,Collage,8,No,HR,HR Assistant
+716536,,male,30,Saint-Petersburg,School,12,No,Finance,Financial Analyst
+648645,,female,38,Nizhniy Novgorod,Collage,10,No,Operations,Process Analyst
+907412,,male,54,Moscow,Magistracy,15,Yes,Operations,Operations Manager
+530575,,male,33,Moscow,Bachelor,5,No,IT,Support Specialist
+967160,,male,59,Kazan,School,22,No,Marketing,Marketing Manager
+557803,,female,38,Moscow,Bachelor,16,No,Finance,Financial Analyst
+249644,,male,36,Moscow,Collage,7,No,HR,HR Assistant
+260799,,female,48,Moscow,Collage,18,No,Marketing,Digital Marketing Specialist
+344993,,male,41,Chelyabinsk,Bachelor,3,Yes,IT,Senior Software Engineer
+923358,,male,29,Krasnoyarsk,Collage,3,Yes,IT,Support Specialist
+631933,,female,34,Chelyabinsk,Bachelor,12,No,IT,Junior Software Engineer
+522850,,female,44,Ekaterinburg,Postgraduate,5,Yes,Finance,Financial Analyst
+240669,,male,52,Moscow,Bachelor,27,No,Marketing,Marketing Assistant
+193244,,male,51,Moscow,Specialist,12,Yes,Finance,Senior Accountant
+106052,,female,43,Moscow,Collage,4,No,Marketing,Marketing Assistant
+861811,,female,33,Moscow,Bachelor,9,Yes,IT,Middle Software Engineer
+730303,,female,29,Moscow,Magistracy,1,No,Operations,Operations Manager
+844892,,female,52,Moscow,Collage,30,Yes,Operations,Operations Coordinator
+541993,,male,48,Saint-Petersburg,Collage,21,No,Marketing,Marketing Manager
+711656,,male,58,Moscow,Collage,18,No,IT,Middle Software Engineer
+925931,,female,37,Moscow,School,17,No,IT,Junior Software Engineer
+249304,,male,48,Moscow,Bachelor,16,No,Finance,Financial Analyst
+710565,,male,44,Chelyabinsk,Collage,10,No,IT,Junior Software Engineer
+382438,,male,47,Saint-Petersburg,School,25,Yes,Operations,Operations Manager
+177542,,female,27,Saint-Petersburg,Collage,5,Yes,Marketing,Marketing Assistant
+780944,,male,24,Krasnoyarsk,School,4,No,Finance,Financial Analyst
+398947,,male,26,Nizhniy Novgorod,Bachelor,3,No,Operations,Operations Coordinator
+580522,,male,29,Moscow,Collage,1,No,Operations,Operations Coordinator
+674932,,male,41,Saint-Petersburg,Bachelor,7,No,IT,Senior Software Engineer
+806029,,male,46,Moscow,Bachelor,0,No,Marketing,Marketing Assistant
+834388,,male,33,Moscow,Collage,2,Yes,Operations,Process Analyst
+386800,,male,36,Nizhniy Novgorod,Magistracy,6,Yes,Finance,Senior Accountant
+564661,,male,39,Moscow,School,13,No,Operations,Operations Manager
+677656,,female,39,Saint-Petersburg,Collage,1,No,Operations,Operations Coordinator
+204487,,male,31,Chelyabinsk,Magistracy,3,No,Finance,Financial Analyst
+537757,,female,28,Ekaterinburg,School,3,No,IT,Junior Software Engineer
+236784,,female,58,Saint-Petersburg,Collage,12,Yes,HR,HR Specialist
+349925,,female,39,Novosibirsk,Collage,19,Yes,Finance,Financial Analyst
+319629,,male,27,Kazan,School,0,No,IT,Middle Software Engineer
+641730,,male,42,Saint-Petersburg,Bachelor,18,Yes,HR,HR Assistant
+907689,,female,30,Saint-Petersburg,Bachelor,2,No,Marketing,Marketing Assistant
+994579,,female,39,Moscow,School,4,No,Marketing,Digital Marketing Specialist
+195419,,female,37,Moscow,Bachelor,13,No,Marketing,Marketing Manager
+369144,,female,49,Moscow,Magistracy,5,Yes,IT,Junior Software Engineer
+590704,,male,44,Novosibirsk,Bachelor,0,Yes,Finance,Financial Analyst
+205260,,female,34,Nizhniy Novgorod,Collage,10,No,IT,Middle Software Engineer
+642014,,male,27,Moscow,Specialist,1,No,Marketing,Digital Marketing Specialist
+322759,,male,44,Moscow,Bachelor,6,No,IT,Junior Software Engineer
+766458,,male,25,Saint-Petersburg,School,5,No,Marketing,Digital Marketing Specialist
+892092,,female,51,Moscow,Collage,18,Yes,Marketing,Digital Marketing Specialist
+463658,,male,41,Krasnodar,Collage,7,No,IT,Middle Software Engineer
+308859,,female,53,Saint-Petersburg,Bachelor,7,No,IT,Middle Software Engineer
+511673,,male,37,Saint-Petersburg,School,0,Yes,IT,Junior Software Engineer
+114204,,male,18,Moscow,School,0,No,Finance,Senior Accountant
+881167,,male,36,Moscow,Magistracy,9,No,Marketing,Marketing Manager
+436720,,female,42,Moscow,School,4,No,Finance,Senior Accountant
+852422,,male,55,Moscow,School,7,No,IT,Junior Software Engineer
+856782,,female,33,Ufa,School,8,No,IT,Support Specialist
+349500,,male,44,Moscow,Postgraduate,11,No,Marketing,Digital Marketing Specialist
+723758,,male,54,Ekaterinburg,Bachelor,27,No,HR,Senior HR Manager
+973734,,male,52,Saint-Petersburg,School,6,Yes,IT,Support Specialist
+737940,,male,50,Saint-Petersburg,School,30,No,HR,HR Assistant
+160274,,female,45,Moscow,Bachelor,20,No,HR,HR Specialist
+997992,,male,34,Chelyabinsk,Collage,12,No,IT,Senior Software Engineer
+326703,,female,57,Moscow,Postgraduate,3,Yes,HR,HR Specialist
+411801,,female,25,Moscow,Collage,4,No,Operations,Operations Manager
+949539,,male,31,Moscow,Collage,1,No,IT,Middle Software Engineer
+744785,,female,39,Moscow,Collage,4,No,Finance,Senior Accountant
+572098,,female,50,Nizhniy Novgorod,School,6,No,IT,Junior Software Engineer
+980995,,female,40,Saint-Petersburg,Collage,8,No,IT,Junior Software Engineer
+896864,,female,27,Saint-Petersburg,Magistracy,2,Yes,IT,Middle Software Engineer
+119120,,male,44,Saint-Petersburg,Bachelor,2,No,HR,Senior HR Manager
+365981,,female,33,Saint-Petersburg,Collage,13,No,IT,Middle Software Engineer
+964667,,female,41,Moscow,Collage,13,Yes,IT,Senior Software Engineer
+903038,,male,54,Moscow,Specialist,9,Yes,IT,Middle Software Engineer
+795320,,female,44,Krasnoyarsk,Collage,6,No,Finance,Senior Accountant
+979606,,female,35,Moscow,Magistracy,3,No,HR,HR Specialist
+653087,,female,35,Moscow,School,2,No,Finance,Senior Accountant
+597796,,male,42,Moscow,Bachelor,9,No,Marketing,Marketing Manager
+394128,,male,45,Ekaterinburg,Specialist,11,No,HR,HR Assistant
+189021,,female,46,Moscow,Collage,13,Yes,HR,HR Assistant
+543522,,male,36,Kazan,School,14,No,IT,Support Specialist
+266312,,male,39,Moscow,Specialist,8,No,IT,Junior Software Engineer
+156553,,male,39,Moscow,School,5,No,HR,HR Specialist
+181904,,male,40,Saint-Petersburg,School,0,No,IT,Support Specialist
+393005,,female,48,Moscow,Collage,10,No,Marketing,Digital Marketing Specialist
+113959,,female,29,Saint-Petersburg,Bachelor,6,No,Marketing,Digital Marketing Specialist
+773003,,female,34,Ufa,School,6,No,Operations,Operations Manager
+123160,,male,32,Krasnodar,Collage,3,No,HR,HR Specialist
+189549,,male,35,Saint-Petersburg,Magistracy,1,No,Marketing,Marketing Manager
+213854,,female,51,Saint-Petersburg,Collage,27,No,Finance,Accountant
+959155,,male,33,Ufa,Bachelor,5,No,Marketing,Digital Marketing Specialist
+427686,,male,48,Novosibirsk,School,12,No,IT,Support Specialist
+164966,,male,35,Moscow,Specialist,8,Yes,IT,Middle Software Engineer
+415346,,male,39,Moscow,Bachelor,6,No,IT,Junior Software Engineer
+285040,,male,48,Chelyabinsk,School,8,Yes,IT,Support Specialist
+209808,,female,48,Moscow,School,12,No,Finance,Accountant
+768000,,male,54,Saint-Petersburg,Collage,5,No,IT,Middle Software Engineer
+361968,,male,30,Saint-Petersburg,School,5,Yes,IT,Middle Software Engineer
+260140,,male,44,Krasnoyarsk,School,17,No,Marketing,Digital Marketing Specialist
+808141,,male,25,Kazan,Magistracy,0,No,IT,Senior Software Engineer
+711036,,female,42,Moscow,Collage,13,Yes,IT,Support Specialist
+204325,,female,24,Moscow,Collage,1,No,Operations,Operations Coordinator
+136626,,male,18,Krasnoyarsk,School,0,Yes,Finance,Financial Analyst
+185508,,female,42,Saint-Petersburg,Bachelor,16,No,IT,Junior Software Engineer
+895230,,female,55,Moscow,School,23,No,IT,Junior Software Engineer
+861443,,male,28,Kazan,Collage,7,No,IT,Junior Software Engineer
+164948,,male,26,Moscow,Collage,3,No,Finance,Senior Accountant
+876366,,female,42,Ufa,Bachelor,19,No,Finance,Senior Accountant
+664225,,female,54,Chelyabinsk,School,22,No,Marketing,Digital Marketing Specialist
+938936,,male,29,Novosibirsk,Bachelor,1,No,Finance,Financial Analyst
+804537,,female,36,Novosibirsk,Specialist,10,Yes,Operations,Operations Coordinator
+821975,,female,27,Ekaterinburg,School,5,No,HR,HR Assistant
+498622,,female,40,Moscow,School,4,Yes,Operations,Operations Coordinator
+785340,,male,20,Chelyabinsk,Collage,0,No,Operations,Process Analyst
+876173,,male,52,Moscow,Magistracy,21,No,Operations,Process Analyst
+731634,,female,25,Krasnodar,Collage,1,No,Operations,Operations Manager
+137210,,male,46,Ufa,Bachelor,10,No,Operations,Process Analyst
+176766,,female,26,Ekaterinburg,Magistracy,1,No,Marketing,Digital Marketing Specialist
+817867,,female,42,Moscow,Magistracy,16,No,IT,Middle Software Engineer
+785274,,female,25,Moscow,Bachelor,2,Yes,Finance,Senior Accountant
+138003,,female,44,Krasnodar,Magistracy,1,No,Finance,Financial Analyst
+434137,,female,43,Moscow,Collage,17,Yes,Marketing,Digital Marketing Specialist
+904631,,female,22,Nizhniy Novgorod,School,3,No,HR,Senior HR Manager
+150582,,female,21,Kazan,Collage,1,Yes,Marketing,Digital Marketing Specialist
+462875,,female,49,Moscow,Bachelor,1,No,Finance,Senior Accountant
+540205,,female,50,Saint-Petersburg,School,17,Yes,Finance,Accountant
+104229,,male,47,Saint-Petersburg,Collage,9,No,Finance,Senior Accountant
+973382,,male,54,Saint-Petersburg,Postgraduate,24,No,Marketing,Marketing Manager
+358523,,male,28,Ufa,Postgraduate,0,No,IT,Middle Software Engineer
+313341,,male,35,Moscow,Collage,10,No,IT,Support Specialist
+809576,,female,57,Krasnodar,Postgraduate,29,No,IT,Junior Software Engineer
+598102,,female,38,Moscow,Magistracy,13,No,Marketing,Marketing Manager
+751436,,female,33,Saint-Petersburg,Collage,6,No,Marketing,Marketing Manager
+864915,,female,28,Saint-Petersburg,Collage,8,No,IT,Support Specialist
+613817,,male,27,Nizhniy Novgorod,Bachelor,1,No,IT,Support Specialist
+110819,,female,43,Moscow,Bachelor,10,No,Marketing,Marketing Assistant
+411407,,female,22,Nizhniy Novgorod,Bachelor,0,No,Operations,Operations Coordinator
+603878,,male,40,Moscow,Magistracy,1,Yes,Finance,Senior Accountant
+499547,,female,18,Moscow,School,0,No,IT,Junior Software Engineer
+628146,,male,18,Kazan,School,0,Yes,IT,Middle Software Engineer
+281972,,female,45,Moscow,Collage,24,No,IT,Junior Software Engineer
+925206,,female,42,Saint-Petersburg,Magistracy,8,No,Finance,Financial Analyst
+932298,,female,44,Kazan,Collage,20,No,IT,Junior Software Engineer
+761546,,female,35,Moscow,Bachelor,12,No,Finance,Senior Accountant
+324650,,male,49,Ufa,Bachelor,20,Yes,Operations,Operations Manager
+250515,,female,38,Moscow,Postgraduate,8,No,Operations,Operations Manager
+856329,,female,51,Moscow,Collage,25,Yes,Operations,Operations Coordinator
+480321,,female,44,Saint-Petersburg,Collage,13,No,Finance,Accountant
+648414,,male,45,Saint-Petersburg,Bachelor,13,Yes,IT,Junior Software Engineer
+689407,,female,47,Nizhniy Novgorod,Bachelor,3,No,HR,HR Assistant
+148324,,female,39,Moscow,Collage,13,No,Finance,Senior Accountant
+673445,,female,44,Moscow,Collage,1,Yes,Marketing,Digital Marketing Specialist
+680768,,male,32,Moscow,Postgraduate,0,No,Finance,Financial Analyst
+484509,,male,43,Moscow,School,24,No,IT,Support Specialist
+131915,,female,46,Moscow,Collage,5,No,Marketing,Marketing Manager
+929249,,male,27,Ekaterinburg,School,5,No,Operations,Operations Manager
+948337,,male,56,Kazan,Magistracy,12,No,IT,Middle Software Engineer
+179967,,male,39,Krasnodar,Collage,11,Yes,IT,Junior Software Engineer
+870824,,female,49,Krasnodar,Collage,20,No,Finance,Senior Accountant
+884893,,female,42,Novosibirsk,Specialist,6,No,Finance,Senior Accountant
+802338,,male,54,Moscow,School,22,Yes,Marketing,Marketing Assistant
+613673,,female,32,Chelyabinsk,Bachelor,3,No,HR,HR Assistant
+690461,,female,46,Krasnodar,School,10,Yes,Operations,Operations Manager
+238177,,male,52,Moscow,Bachelor,5,Yes,HR,HR Assistant
+364702,,female,24,Krasnoyarsk,School,5,Yes,IT,Middle Software Engineer
+885298,,female,51,Moscow,Collage,7,No,HR,HR Assistant
+934194,,female,44,Nizhniy Novgorod,Collage,16,No,IT,Support Specialist
+700410,,female,43,Moscow,School,17,No,Marketing,Marketing Assistant
+436285,,male,36,Saint-Petersburg,Collage,1,Yes,Finance,Accountant
+125121,,female,44,Nizhniy Novgorod,School,25,No,IT,Support Specialist
+513728,,female,45,Saint-Petersburg,Bachelor,2,Yes,Finance,Financial Analyst
+475655,,male,40,Novosibirsk,School,6,No,Operations,Process Analyst
+449616,,male,37,Nizhniy Novgorod,Collage,11,No,Operations,Process Analyst
+185673,,male,34,Moscow,Bachelor,7,No,Finance,Senior Accountant
+840378,,female,34,Ufa,Collage,7,No,IT,Senior Software Engineer
+627305,,male,30,Saint-Petersburg,Bachelor,8,No,Operations,Process Analyst
+614245,,male,51,Moscow,Magistracy,15,Yes,Finance,Financial Analyst
+475648,,female,34,Moscow,Bachelor,11,No,Operations,Operations Manager
+697338,,female,43,Moscow,Postgraduate,3,No,Finance,Financial Analyst
+713002,,male,52,Saint-Petersburg,Bachelor,1,No,HR,HR Assistant
+353169,,male,56,Novosibirsk,School,10,No,Marketing,Digital Marketing Specialist
+174422,,male,28,Saint-Petersburg,Magistracy,2,No,HR,HR Specialist
+105083,,female,52,Moscow,Collage,22,No,Finance,Accountant
+240528,,male,46,Moscow,Specialist,9,Yes,HR,HR Assistant
+962350,,male,45,Krasnodar,Bachelor,9,No,Marketing,Digital Marketing Specialist
+382992,,male,30,Moscow,Bachelor,1,Yes,Operations,Operations Coordinator
+565457,,male,32,Moscow,Collage,12,No,Operations,Process Analyst
+832844,,female,38,Krasnodar,Bachelor,7,No,IT,Support Specialist
+755334,,male,53,Ufa,Magistracy,9,No,HR,Senior HR Manager
+234218,,female,19,Chelyabinsk,School,1,No,IT,Middle Software Engineer
+716838,,female,31,Nizhniy Novgorod,School,4,Yes,IT,Middle Software Engineer
+241862,,male,35,Moscow,School,7,No,IT,Junior Software Engineer
+308495,,female,34,Moscow,Bachelor,7,Yes,Finance,Accountant
+879493,,male,27,Nizhniy Novgorod,School,9,No,IT,Junior Software Engineer
+273389,,male,50,Saint-Petersburg,Bachelor,20,No,IT,Support Specialist
+708354,,female,33,Moscow,Collage,0,No,IT,Middle Software Engineer
+133026,,female,48,Ekaterinburg,School,4,No,HR,HR Specialist
+472820,,male,27,Krasnodar,Collage,2,No,Operations,Operations Manager
+931289,,female,39,Moscow,Collage,1,No,IT,Support Specialist
+346247,,female,44,Moscow,Bachelor,17,Yes,Marketing,Marketing Manager
+582103,,male,38,Moscow,School,20,No,Operations,Operations Coordinator
+694031,,male,38,Nizhniy Novgorod,Collage,13,No,IT,Junior Software Engineer
+205583,,male,53,Moscow,Collage,4,Yes,Finance,Financial Analyst
+194211,,male,37,Chelyabinsk,Collage,11,Yes,Marketing,Marketing Manager
+695061,,female,43,Saint-Petersburg,Collage,20,No,IT,Middle Software Engineer
+569002,,male,40,Moscow,Collage,10,Yes,Operations,Operations Coordinator
+505466,,male,30,Chelyabinsk,Specialist,4,No,Finance,Accountant
+197241,,male,48,Moscow,Specialist,7,No,HR,HR Assistant
+107678,,female,25,Ekaterinburg,School,0,No,HR,HR Specialist
+404625,,male,49,Novosibirsk,School,15,Yes,Finance,Senior Accountant
+865067,,male,41,Moscow,Collage,14,Yes,Operations,Operations Coordinator
+439196,,female,49,Moscow,Postgraduate,8,Yes,HR,Senior HR Manager
+955094,,female,26,Saint-Petersburg,Collage,4,No,Marketing,Digital Marketing Specialist
+216646,,male,33,Moscow,Bachelor,2,No,IT,Junior Software Engineer
+213864,,male,38,Chelyabinsk,Collage,15,No,Marketing,Marketing Assistant
+773143,,male,36,Moscow,Collage,12,No,HR,HR Assistant
+810588,,male,38,Moscow,School,3,No,IT,Middle Software Engineer
+910778,,male,37,Novosibirsk,School,2,No,Marketing,Digital Marketing Specialist
+302522,,female,41,Nizhniy Novgorod,Bachelor,14,No,Marketing,Marketing Assistant
+766803,,female,37,Moscow,Bachelor,10,No,HR,HR Assistant
+841350,,female,43,Ekaterinburg,Collage,20,No,HR,HR Specialist
+219146,,female,34,Saint-Petersburg,School,6,No,IT,Middle Software Engineer
+794643,,male,46,Nizhniy Novgorod,Postgraduate,18,No,IT,Middle Software Engineer
+657400,,male,40,Novosibirsk,Postgraduate,1,No,IT,Junior Software Engineer
+268814,,female,41,Moscow,Collage,21,No,HR,HR Specialist
+714472,,male,56,Moscow,School,16,No,Operations,Process Analyst
+946663,,male,21,Moscow,Collage,1,No,Finance,Senior Accountant
+721280,,male,37,Novosibirsk,Collage,14,No,Finance,Accountant
+518791,,male,49,Novosibirsk,Collage,17,No,IT,Senior Software Engineer
+567237,,male,62,Nizhniy Novgorod,Collage,31,No,HR,Senior HR Manager
+948491,,female,43,Moscow,School,15,No,IT,Middle Software Engineer
+973425,,male,47,Moscow,School,28,Yes,Operations,Operations Manager
+884180,,female,20,Ekaterinburg,Collage,0,No,Operations,Operations Coordinator
+499672,,female,34,Moscow,Magistracy,6,No,Finance,Financial Analyst
+852202,,female,32,Krasnodar,Collage,10,No,Finance,Financial Analyst
+188800,,male,37,Ufa,Collage,8,No,Marketing,Marketing Manager
+986936,,male,36,Moscow,Collage,10,Yes,IT,Support Specialist
+259035,,male,29,Moscow,Bachelor,2,Yes,Operations,Operations Coordinator
+334320,,female,51,Moscow,Postgraduate,5,No,HR,HR Specialist
+755601,,male,36,Novosibirsk,Collage,16,Yes,Marketing,Marketing Manager
+979153,,male,42,Ekaterinburg,Specialist,10,Yes,Finance,Financial Analyst
+124629,,male,42,Moscow,Collage,15,Yes,Finance,Senior Accountant
+306424,,male,57,Krasnodar,Bachelor,8,Yes,IT,Senior Software Engineer
+934447,,male,18,Saint-Petersburg,School,0,Yes,HR,HR Assistant
+407706,,male,34,Moscow,Collage,4,No,Operations,Operations Manager
+676403,,female,47,Moscow,Bachelor,13,No,IT,Senior Software Engineer
+110130,,male,27,Saint-Petersburg,School,0,Yes,HR,HR Specialist
+294958,,male,32,Moscow,Bachelor,10,No,HR,HR Specialist
+405479,,female,53,Saint-Petersburg,Magistracy,27,No,Operations,Process Analyst
+695517,,male,34,Nizhniy Novgorod,Collage,3,No,Operations,Operations Coordinator
+635108,,female,43,Moscow,Magistracy,12,No,IT,Middle Software Engineer
+865236,,male,20,Moscow,Collage,0,No,Marketing,Digital Marketing Specialist
+865611,,female,29,Moscow,School,5,Yes,Finance,Accountant
+705429,,male,39,Saint-Petersburg,Collage,15,Yes,Operations,Process Analyst
+583279,,male,39,Saint-Petersburg,Collage,9,No,HR,HR Assistant
+817690,,female,31,Chelyabinsk,School,8,No,IT,Support Specialist
+394406,,male,39,Ekaterinburg,Collage,1,Yes,Operations,Operations Manager
+835504,,male,27,Kazan,School,2,No,Operations,Process Analyst
+223884,,male,41,Moscow,Specialist,11,No,Operations,Operations Manager
+674955,,female,23,Moscow,Specialist,0,No,Operations,Operations Manager
+732897,,male,23,Moscow,School,1,No,Finance,Financial Analyst
+374511,,male,43,Krasnodar,Collage,12,No,Operations,Process Analyst
+560242,,female,49,Moscow,Postgraduate,14,No,Operations,Process Analyst
+230325,,female,30,Chelyabinsk,School,2,No,Finance,Accountant
+538265,,female,32,Saint-Petersburg,Postgraduate,3,No,Marketing,Marketing Manager
+971215,,male,49,Kazan,Collage,7,Yes,Marketing,Digital Marketing Specialist
+159817,,female,18,Moscow,School,0,No,Marketing,Digital Marketing Specialist
+536397,,female,49,Moscow,Specialist,5,Yes,HR,HR Assistant
+305226,,female,30,Moscow,Bachelor,2,No,IT,Middle Software Engineer
+837128,,female,26,Novosibirsk,Bachelor,4,Yes,HR,HR Assistant
+355561,,female,47,Krasnodar,Bachelor,17,Yes,IT,Senior Software Engineer
+708431,,female,39,Moscow,Collage,14,No,HR,HR Assistant
+682258,,male,54,Saint-Petersburg,Postgraduate,20,No,Operations,Operations Manager
+333039,,male,33,Moscow,Bachelor,1,No,Finance,Financial Analyst
+969020,,female,57,Saint-Petersburg,Magistracy,31,Yes,Marketing,Digital Marketing Specialist
+515413,,female,40,Saint-Petersburg,Bachelor,17,No,Marketing,Digital Marketing Specialist
+212956,,male,25,Moscow,Collage,0,No,Finance,Senior Accountant
+596871,,female,45,Saint-Petersburg,Collage,10,Yes,IT,Junior Software Engineer
+457863,,male,55,Saint-Petersburg,Collage,9,Yes,Finance,Senior Accountant
+567270,,male,34,Kazan,Bachelor,11,No,IT,Junior Software Engineer
+443902,,female,49,Krasnodar,Collage,27,No,Marketing,Marketing Assistant
+422222,,male,27,Saint-Petersburg,Bachelor,1,No,IT,Middle Software Engineer
+831819,,female,52,Moscow,Magistracy,5,Yes,Marketing,Digital Marketing Specialist
+835942,,female,47,Nizhniy Novgorod,Bachelor,23,No,IT,Junior Software Engineer
+933590,,female,27,Moscow,Collage,2,No,IT,Support Specialist
+647620,,male,28,Saint-Petersburg,School,8,No,Operations,Process Analyst
+967102,,female,53,Saint-Petersburg,Collage,17,Yes,Marketing,Marketing Assistant
+507929,,male,39,Saint-Petersburg,School,13,No,IT,Support Specialist
+371645,,female,34,Saint-Petersburg,Collage,14,No,Operations,Operations Coordinator
+915168,,male,34,Nizhniy Novgorod,Specialist,9,No,Finance,Senior Accountant
+631008,,male,50,Moscow,School,15,No,Marketing,Marketing Assistant
+458601,,female,34,Moscow,Collage,11,Yes,Finance,Accountant
+306222,,male,47,Saint-Petersburg,Collage,2,No,Marketing,Marketing Assistant
+168710,,male,43,Moscow,Collage,5,No,Marketing,Marketing Assistant
+398633,,female,46,Moscow,Magistracy,10,No,Finance,Senior Accountant
+383369,,female,48,Chelyabinsk,Bachelor,15,No,HR,HR Specialist
+781530,,female,35,Moscow,Postgraduate,7,No,Finance,Financial Analyst
+380347,,female,35,Novosibirsk,Collage,7,No,Operations,Process Analyst
+221584,,female,21,Moscow,Collage,1,Yes,HR,HR Assistant
+512210,,male,52,Nizhniy Novgorod,School,32,Yes,Marketing,Marketing Manager
+901846,,female,34,Krasnoyarsk,Bachelor,2,No,IT,Support Specialist
+279975,,male,24,Saint-Petersburg,Bachelor,2,No,Operations,Process Analyst
+866676,,male,40,Nizhniy Novgorod,Collage,0,Yes,Finance,Accountant
+573831,,female,47,Ufa,School,1,No,IT,Middle Software Engineer
+724692,,female,45,Moscow,Bachelor,17,Yes,Finance,Financial Analyst
+291632,,male,36,Saint-Petersburg,School,11,No,Marketing,Marketing Manager
+580654,,male,43,Kazan,Bachelor,11,No,Operations,Process Analyst
+528196,,male,47,Novosibirsk,School,25,No,IT,Junior Software Engineer
+797468,,male,30,Moscow,School,11,No,Finance,Accountant
+723770,,male,52,Moscow,Bachelor,11,No,HR,HR Assistant
+143693,,male,31,Moscow,School,6,No,Operations,Process Analyst
+611877,,male,30,Saint-Petersburg,Collage,7,No,HR,HR Specialist
+441978,,male,41,Ufa,Magistracy,4,Yes,Marketing,Digital Marketing Specialist
+558223,,female,40,Moscow,Magistracy,15,No,IT,Middle Software Engineer
+933769,,male,33,Moscow,Bachelor,8,Yes,Marketing,Marketing Manager
+717120,,male,33,Moscow,School,0,Yes,Finance,Senior Accountant
+664587,,male,41,Moscow,Collage,14,No,HR,HR Specialist
+192462,,male,44,Ufa,Collage,8,No,IT,Middle Software Engineer
+751346,,male,33,Moscow,School,12,No,IT,Junior Software Engineer
+625621,,male,22,Saint-Petersburg,Collage,0,No,Marketing,Digital Marketing Specialist
+354816,,female,53,Saint-Petersburg,Collage,9,Yes,IT,Support Specialist
+480202,,female,33,Moscow,Collage,1,No,Operations,Process Analyst
+229374,,male,22,Moscow,Bachelor,0,Yes,IT,Support Specialist
+103131,,female,36,Saint-Petersburg,Bachelor,3,No,IT,Support Specialist
+992950,,male,34,Moscow,Bachelor,10,Yes,Finance,Senior Accountant
+546665,,female,32,Moscow,Specialist,6,Yes,Operations,Process Analyst
+680450,,male,47,Nizhniy Novgorod,Bachelor,5,No,IT,Senior Software Engineer
+177423,,male,38,Moscow,Specialist,11,Yes,HR,HR Specialist
+324214,,female,59,Saint-Petersburg,Magistracy,2,No,Finance,Financial Analyst
+347172,,female,54,Saint-Petersburg,Postgraduate,17,No,IT,Senior Software Engineer
+403298,,male,35,Moscow,Collage,13,Yes,IT,Support Specialist
+638015,,male,34,Saint-Petersburg,School,13,No,Finance,Financial Analyst
+810449,,male,40,Ekaterinburg,Specialist,8,No,IT,Support Specialist
+820154,,male,44,Krasnodar,Collage,17,No,HR,HR Assistant
+133441,,female,40,Moscow,Specialist,17,No,Finance,Senior Accountant
+600738,,female,32,Chelyabinsk,School,5,No,Finance,Financial Analyst
+584837,,female,38,Moscow,School,2,No,IT,Middle Software Engineer
+864132,,female,42,Moscow,Specialist,3,No,IT,Junior Software Engineer
+373186,,female,48,Kazan,Collage,25,No,IT,Middle Software Engineer
+638818,,female,27,Kazan,Collage,3,No,HR,HR Assistant
+711365,,female,19,Moscow,School,0,No,Finance,Senior Accountant
+608295,,female,44,Moscow,Bachelor,21,No,Operations,Operations Coordinator
+239159,,female,37,Moscow,Bachelor,15,No,Finance,Accountant
+757793,,female,43,Moscow,Bachelor,18,No,HR,HR Specialist
+509646,,male,40,Moscow,Collage,19,Yes,Finance,Financial Analyst
+715939,,male,33,Moscow,Collage,10,No,HR,Senior HR Manager
+442730,,male,27,Moscow,Magistracy,0,No,IT,Junior Software Engineer
+388546,,female,52,Moscow,Collage,21,No,HR,HR Specialist
+789435,,female,19,Moscow,School,0,No,IT,Middle Software Engineer
+248064,,female,44,Moscow,Specialist,8,No,Marketing,Marketing Assistant
+804353,,female,41,Ekaterinburg,Collage,12,No,IT,Support Specialist
+969132,,female,36,Moscow,Collage,1,No,Marketing,Marketing Assistant
+595521,,female,44,Moscow,Collage,12,No,Operations,Operations Manager
+828356,,female,42,Ekaterinburg,Collage,14,No,Finance,Senior Accountant
+935465,,female,47,Kazan,School,18,Yes,Finance,Financial Analyst
+251680,,male,41,Nizhniy Novgorod,Bachelor,17,No,HR,Senior HR Manager
+342677,,female,41,Ekaterinburg,Specialist,2,No,HR,HR Assistant
+474379,,male,36,Saint-Petersburg,Bachelor,14,No,Operations,Process Analyst
+140857,,male,43,Chelyabinsk,Bachelor,3,No,HR,HR Assistant
+575276,,female,48,Moscow,Postgraduate,15,No,Marketing,Marketing Manager
+548807,,male,27,Novosibirsk,Magistracy,1,No,Finance,Financial Analyst
+812392,,female,53,Ufa,School,25,No,IT,Junior Software Engineer
+853745,,male,45,Saint-Petersburg,Bachelor,17,No,IT,Senior Software Engineer
+270397,,male,26,Chelyabinsk,Specialist,2,Yes,HR,Senior HR Manager
+107466,,female,52,Nizhniy Novgorod,Collage,5,No,Finance,Financial Analyst
+589723,,female,36,Saint-Petersburg,Specialist,13,Yes,Finance,Senior Accountant
+575233,,male,50,Moscow,Specialist,1,No,IT,Middle Software Engineer
+218927,,female,27,Saint-Petersburg,Magistracy,1,Yes,Operations,Process Analyst
+561792,,male,27,Saint-Petersburg,School,1,No,Finance,Financial Analyst
+503183,,female,28,Moscow,Collage,6,Yes,Marketing,Marketing Assistant
+184216,,male,36,Moscow,School,3,No,Marketing,Digital Marketing Specialist
+847286,,female,33,Moscow,Magistracy,4,No,Finance,Financial Analyst
+638880,,male,61,Saint-Petersburg,Collage,18,Yes,IT,Junior Software Engineer
+966127,,male,29,Saint-Petersburg,Collage,4,No,Finance,Financial Analyst
+851955,,female,21,Moscow,School,2,No,Marketing,Digital Marketing Specialist
+298014,,male,19,Moscow,School,1,No,Operations,Process Analyst
+419518,,female,47,Moscow,Collage,24,No,Finance,Accountant
+223750,,female,41,Moscow,Bachelor,2,Yes,HR,Senior HR Manager
+782631,,male,49,Moscow,Collage,14,Yes,IT,Junior Software Engineer
+410479,,male,47,Moscow,Bachelor,17,No,IT,Senior Software Engineer
+833791,,female,55,Moscow,Postgraduate,10,No,Operations,Process Analyst
+726690,,male,41,Moscow,School,22,No,HR,HR Specialist
+540561,,male,41,Moscow,Bachelor,18,No,Marketing,Marketing Assistant
+815035,,female,31,Moscow,Specialist,3,Yes,IT,Senior Software Engineer
+553015,,female,30,Moscow,Collage,9,Yes,Operations,Operations Coordinator
+915022,,male,39,Moscow,Specialist,7,No,HR,HR Assistant
+541279,,male,37,Moscow,School,12,No,Finance,Financial Analyst
+331004,,male,24,Krasnoyarsk,Collage,4,No,Finance,Financial Analyst
+304452,,male,40,Novosibirsk,Magistracy,14,Yes,Finance,Senior Accountant
+580944,,female,41,Moscow,Postgraduate,11,Yes,Operations,Operations Manager
+150151,,male,33,Moscow,Collage,0,No,Finance,Accountant
+402450,,male,43,Nizhniy Novgorod,Bachelor,11,No,Finance,Accountant
+585983,,male,50,Novosibirsk,School,5,No,IT,Junior Software Engineer
+470618,,male,40,Saint-Petersburg,School,16,No,IT,Support Specialist
+426835,,female,44,Kazan,Magistracy,18,No,Marketing,Marketing Manager
+362540,,male,47,Krasnoyarsk,Collage,13,Yes,HR,HR Specialist
+698482,,female,29,Moscow,Collage,6,No,Operations,Process Analyst
+464290,,female,44,Ekaterinburg,School,7,Yes,IT,Junior Software Engineer
+848877,,female,57,Moscow,Bachelor,1,No,HR,HR Specialist
+600284,,female,36,Saint-Petersburg,Bachelor,10,Yes,Finance,Financial Analyst
+139915,,female,38,Ekaterinburg,School,12,No,Marketing,Marketing Assistant
+758214,,male,24,Moscow,Collage,1,No,HR,HR Specialist
+715338,,male,29,Moscow,Collage,8,Yes,Operations,Operations Manager
+495919,,male,35,Ufa,Collage,1,No,Marketing,Digital Marketing Specialist
+799053,,male,26,Saint-Petersburg,School,4,Yes,Finance,Financial Analyst
+842333,,female,35,Moscow,School,5,No,IT,Middle Software Engineer
+549088,,male,28,Saint-Petersburg,Collage,4,No,Finance,Accountant
+518694,,male,40,Moscow,Magistracy,14,Yes,HR,Senior HR Manager
+919295,,male,42,Moscow,Collage,5,No,Marketing,Marketing Assistant
+427197,,male,44,Moscow,School,25,Yes,IT,Junior Software Engineer
+898208,,male,24,Moscow,Collage,1,No,Marketing,Marketing Assistant
+308735,,female,37,Kazan,Bachelor,13,Yes,Marketing,Digital Marketing Specialist
+341361,,female,41,Ufa,Collage,19,Yes,IT,Support Specialist
+421061,,female,35,Chelyabinsk,School,1,No,IT,Support Specialist
+153214,,female,39,Novosibirsk,Collage,16,Yes,HR,HR Specialist
+331362,,female,34,Saint-Petersburg,School,8,Yes,Operations,Operations Manager
+198124,,female,39,Krasnoyarsk,School,10,No,IT,Support Specialist
+828963,,female,41,Moscow,Specialist,9,No,IT,Junior Software Engineer
+160355,,male,34,Moscow,Magistracy,5,No,Marketing,Digital Marketing Specialist
+782850,,female,26,Saint-Petersburg,Bachelor,0,Yes,Marketing,Marketing Assistant
+101203,,female,31,Moscow,Bachelor,1,No,IT,Support Specialist
+475460,,female,46,Saint-Petersburg,School,2,No,HR,HR Assistant
+488994,,male,48,Moscow,Bachelor,20,No,HR,HR Assistant
+465395,,male,41,Novosibirsk,School,14,No,IT,Middle Software Engineer
+380098,,female,25,Moscow,Bachelor,1,No,IT,Middle Software Engineer
+630665,,female,41,Saint-Petersburg,Specialist,8,No,Operations,Process Analyst
+985418,,male,54,Moscow,Bachelor,12,Yes,IT,Junior Software Engineer
+425910,,female,31,Moscow,School,12,Yes,IT,Senior Software Engineer
+903251,,female,52,Moscow,Collage,11,No,Marketing,Marketing Manager
+207668,,male,50,Moscow,Bachelor,14,Yes,Marketing,Digital Marketing Specialist
+973501,,male,50,Saint-Petersburg,Collage,20,No,HR,HR Assistant
+812138,,male,34,Moscow,Collage,2,No,Finance,Financial Analyst
+661362,,female,47,Saint-Petersburg,Collage,11,Yes,Marketing,Marketing Assistant
+126598,,male,54,Ufa,Collage,9,No,Marketing,Marketing Manager
+468281,,male,40,Moscow,Bachelor,9,Yes,HR,Senior HR Manager
+117838,,female,22,Moscow,Collage,2,No,IT,Support Specialist
+797988,,female,42,Novosibirsk,Bachelor,6,No,Operations,Process Analyst
+132490,,male,32,Saint-Petersburg,School,1,No,Operations,Process Analyst
+702548,,female,38,Moscow,School,16,No,HR,HR Specialist
+896619,,male,29,Moscow,Collage,7,No,Operations,Process Analyst
+571771,,male,40,Moscow,Specialist,15,No,Marketing,Marketing Manager
+753767,,female,22,Kazan,Bachelor,0,No,Finance,Senior Accountant
+764848,,male,49,Moscow,Bachelor,8,Yes,Marketing,Marketing Manager
+863538,,male,33,Saint-Petersburg,School,7,No,Finance,Financial Analyst
+619606,,female,53,Saint-Petersburg,Collage,24,No,Marketing,Marketing Assistant
+210892,,female,58,Moscow,Bachelor,20,No,Marketing,Marketing Assistant
+739577,,female,30,Moscow,School,5,No,HR,Senior HR Manager
+878375,,male,48,Moscow,Magistracy,12,No,Marketing,Marketing Manager
+631103,,male,48,Saint-Petersburg,Collage,18,No,HR,HR Assistant
+771074,,female,26,Saint-Petersburg,Specialist,1,No,Finance,Accountant
+824775,,female,35,Ekaterinburg,Bachelor,1,Yes,Operations,Operations Manager
+359609,,male,24,Ufa,Collage,3,No,Marketing,Digital Marketing Specialist
+915249,,male,28,Moscow,Bachelor,6,No,HR,HR Specialist
+750347,,female,38,Moscow,School,17,Yes,Operations,Operations Coordinator
+871077,,female,48,Chelyabinsk,Magistracy,3,No,Marketing,Digital Marketing Specialist
+422931,,female,45,Nizhniy Novgorod,School,8,Yes,Finance,Financial Analyst
+457883,,female,48,Saint-Petersburg,Bachelor,8,No,HR,HR Specialist
+695952,,male,26,Moscow,Collage,2,No,Marketing,Marketing Assistant
+526746,,female,34,Saint-Petersburg,Collage,1,No,HR,HR Assistant
+378108,,female,46,Novosibirsk,Postgraduate,5,No,Marketing,Marketing Manager
+433667,,male,34,Nizhniy Novgorod,Bachelor,3,Yes,IT,Middle Software Engineer
+314918,,male,46,Moscow,Bachelor,17,No,HR,HR Specialist
+983850,,male,49,Kazan,School,22,No,IT,Middle Software Engineer
+497083,,female,34,Moscow,School,11,No,IT,Junior Software Engineer
+452638,,female,48,Krasnodar,Collage,26,Yes,HR,HR Assistant
+242578,,male,31,Saint-Petersburg,Specialist,3,No,IT,Junior Software Engineer
+837169,,female,40,Moscow,School,4,Yes,HR,HR Specialist
+575763,,female,33,Saint-Petersburg,School,3,Yes,Finance,Financial Analyst
+743211,,female,45,Saint-Petersburg,Collage,1,Yes,Marketing,Digital Marketing Specialist
+623484,,male,34,Saint-Petersburg,School,16,No,Operations,Operations Coordinator
+936128,,male,34,Ufa,Magistracy,4,No,Finance,Senior Accountant
+889284,,male,44,Ekaterinburg,Collage,13,Yes,Finance,Accountant
+283879,,female,34,Moscow,Bachelor,1,Yes,Finance,Accountant
+824192,,female,50,Moscow,School,21,Yes,HR,Senior HR Manager
+867648,,male,38,Saint-Petersburg,Magistracy,3,No,IT,Middle Software Engineer
+696657,,female,41,Moscow,Collage,6,No,Finance,Accountant
+738894,,male,18,Moscow,School,0,No,Operations,Process Analyst
+678200,,female,20,Saint-Petersburg,Collage,0,No,Marketing,Digital Marketing Specialist
+401469,,male,48,Kazan,Bachelor,24,No,IT,Support Specialist
+274024,,male,38,Moscow,Collage,15,Yes,IT,Middle Software Engineer
+537056,,female,51,Moscow,Collage,12,No,Marketing,Digital Marketing Specialist
+274773,,male,51,Moscow,Magistracy,4,No,Marketing,Digital Marketing Specialist
+122036,,female,49,Saint-Petersburg,School,26,No,Operations,Process Analyst
+237662,,female,51,Ufa,Collage,28,No,Marketing,Marketing Assistant
+943229,,female,33,Moscow,Collage,2,No,Finance,Senior Accountant
+579653,,female,42,Ekaterinburg,Bachelor,3,No,IT,Middle Software Engineer
+693277,,female,58,Novosibirsk,Bachelor,30,Yes,HR,HR Specialist
+671586,,female,28,Moscow,Bachelor,3,No,IT,Senior Software Engineer
+885536,,male,33,Moscow,Collage,8,No,IT,Middle Software Engineer
+218303,,male,27,Moscow,Specialist,3,No,IT,Support Specialist
+592369,,male,38,Moscow,School,16,No,HR,HR Specialist
+649163,,male,48,Moscow,Collage,11,No,HR,HR Assistant
+466565,,male,19,Saint-Petersburg,School,1,No,Operations,Operations Coordinator

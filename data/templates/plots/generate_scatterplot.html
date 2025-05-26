@@ -7,6 +7,25 @@
 <script>document.getElementById('plot').innerHTML = `{{ plot|safe }}`</script>
 <br>
 
+
+<h1>Диаграмма рассеивания</h1>
+
+<div class="container">
+    <details>
+    <summary>Описание</summary>
+        <br>
+        Показывает отношение между двумя непрерывными переменными.<br>
+        При раскраске по котегориям можно увидеть отношение с третьей,<br>
+        категориальной переменной.<br>
+        Линии регрессии помогут определить линейную зависимость между ними. <br>
+        <br>
+        Для большей наглядности следует выбирать третью перенменную с<br>
+        небольшим количеством принимаемых значений.<br>
+        Если этих значений будет больше 10, то линии регресии построены не будут.<br>
+    </details>
+</div>
+<br>
+
 <form method="post">
     <div class="container">
         <h1>Значения на оси Ox:</h1>
@@ -37,6 +56,11 @@
         </div>
         {% endfor %}
 
+        <br>
+        <div class="row">
+            <input type="checkbox" id="regline" name="regline" style="max-width: 20px;">
+            <label for="regline"><p>Добавить линии регрессии </p></label>
+        </div>
         <button type="submit">Построить</button>
     </div>
 </form>

@@ -3,7 +3,7 @@ from flask import (Blueprint, session, g,
                    render_template, redirect, request, url_for)
 
 from database import DataBase
-from .forms import LoginForm, RegisterForm
+from data.forms import LoginForm, RegisterForm
 
 
 bp = Blueprint("user", __name__)

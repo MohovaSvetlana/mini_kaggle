@@ -26,7 +26,10 @@ def create_app():
 
     from data import blueprints_user
     from data import blueprints_competiton
+    from data import blueprints_plots
+
     app.register_blueprint(blueprints_user.bp)
     app.register_blueprint(blueprints_competiton.bp)
+    app.register_blueprint(blueprints_plots.bp)
 
     return app

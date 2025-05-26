@@ -3,7 +3,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, accuracy_sc
 from threading import Thread
 
 from database import DataBase
-import os
+from data.file_handler import FileHandler
 
 
 class TestingSubmissions(Thread):
@@ -25,9 +25,9 @@ class TestingSubmissions(Thread):
 
     def test_submission(self, metric, submission_id, competition_id):
         try:
-            solution_path = os.path.join('db', 'competitions', str(competition_id), 'solution.csv')
+            solution_path = FileHandler.get_competition_solution_file_path(competition_id)
             solution_data = pd.read_csv(solution_path)
-            submission_path = os.path.join('db', 'submissions', f'submission{submission_id}.csv')
+            submission_path = FileHandler.get_competition_submission_file_path(submission_id)
             submission_data = pd.read_csv(submission_path)
             y = solution_data.columns[-1]
             solution_y = solution_data[y]

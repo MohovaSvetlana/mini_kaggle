@@ -2,6 +2,8 @@
 
 {% block content_competition %}
 <tbody>
+
+<div style="overflow-x: auto;">
     <table>
 
         <tr>
@@ -13,9 +15,9 @@
         {% for solution in solutions[1:] %}
             <tr>
                 <td>
-                    <button><a href="{{ url_for('competition.download_submission_file', submission_id=solution[0]) }}">
+                    <a href="{{ url_for('competition.download_submission_file', submission_id=solution[0]) }}"><button>
                         {{ solution[0] }}
-                    </a></button>
+                    </button></a>
                 </td>
 
                 {% for el in solution[1:] %}
@@ -25,6 +27,7 @@
         {% endfor %}
 
     </table>
+</div>
 </tbody>
 
 {% endblock %}

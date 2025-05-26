@@ -14,10 +14,10 @@
         {% if g.user %}
             <div class="row">
                 <h1> {{ g.user.login }}</h1>
-                <button style="background-color: #f25f73"><a href="{{ url_for('user.logout') }}">Выйти</a></button>
+                <a href="{{ url_for('user.logout') }}"><button style="background-color: #f25f73">Выйти</button></a>
             </div>
         {% else %}
-            <button style="max-width: 80px;"><a href="{{ url_for('user.login') }}">Войти</a></button>
+            <a href="{{ url_for('user.login') }}"><button style="max-width: 80px;">Войти</button></a>
         {% endif %}
     </header>
 
