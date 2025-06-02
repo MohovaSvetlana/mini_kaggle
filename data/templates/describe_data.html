@@ -18,7 +18,8 @@
 <br>
 
 <h1>Описание:</h1>
-
+Размер выборки: {{ num_of_columns }}
+<br><br>
 <div style="overflow-x: auto;">
   <table>
     {% for row in described_data %}
@@ -65,7 +66,7 @@
             <li>Отношение    (Ratio)    - имеют порядок и равные интервалы. Ноль есть и обозначает отсутствие характеристики.</li>
         </ul>
         <br>
-        К категориальным переменным относятся номитальные.<br>
+        К категориальным переменным относятся номинальные.<br>
         К непрерывным - интервальные и отношение.<br>
         Порядковые переменные могут быть как категориальными, так и непрерывными.
     </details>
@@ -91,6 +92,8 @@
     Гистограмма</button></a> <br>
 <a href="{{ url_for('plots.generate_density_plot', competition_id=competition.id) }}"><button style="max-width: 300px; background-color: #8e44ad">
     График распределения</button></a> <br>
+<a href="{{ url_for('plots.generate_histogram_and_density_plot', competition_id=competition.id) }}"><button style="max-width: 300px; background-color: #8e44ad">
+    Гистограмма и график распределения</button></a> <br>
 
 </tbody>
 {% endblock %}

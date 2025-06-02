@@ -143,6 +143,7 @@ def results():
 @competition_required
 def describe_data():
     return render_template("describe_data.html", competition=g.competition, title="Описание данных",
+                           num_of_columns=OverviewData.get_data_size(g.competition.id)[0],
                            data_head=OverviewData.get_head_data(g.competition.id),
                            described_data=OverviewData.get_described_data(g.competition.id))
 

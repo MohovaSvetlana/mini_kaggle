@@ -29,6 +29,11 @@ class OverviewData:
         return table_data
 
     @staticmethod
+    def get_data_size(competition_id):
+        file_path = FileHandler.get_competition_train_file_path(competition_id)
+        return pd.read_csv(file_path).shape
+
+    @staticmethod
     def generate_plot(func):
 
         def wrapped_func(competition_id, *args, **kwargs):
@@ -122,3 +127,19 @@ class OverviewData:
         plt.xticks(rotation=75)
         data = pd.read_csv(file_path)
         sns.swarmplot(data=data, x=data[x], y=data[y])
+
+    @staticmethod
+    @generate_plot
+    def histogram_and_density_plot(file_path, val, hue):
+        data = pd.read_csv(file_path)
+        if data[val].dtype != "object":
+            fig, ax = plt.subplots()
+            if hue and data[hue].nunique() <= 10:
+                sns.kdeplot(data=data, x=val, hue=hue, fill=True, ax=ax)
+                ax2 = ax.twinx()
+                plot = sns.histplot(data=data, x=val, hue=hue, ax=ax2)
+                plot.get_legend().remove()
+            else:
+                sns.kdeplot(data=data, x=val, fill=True, ax=ax)
+                ax2 = ax.twinx()
+                sns.histplot(data=data, x=val, ax=ax2)

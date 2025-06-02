@@ -93,6 +93,17 @@ def generate_categorical_scatterplot():
     return render_plots(data, page="plots/generate_categorical_scatterplot.html")
 
 
+@bp.route("/generate_histogram_and_density_plot/<competition_id>", methods=['GET', 'POST'])
+@competition_required
+def generate_histogram_and_density_plot():
+    data = None
+    if request.method == "POST":
+        data = OverviewData.histogram_and_density_plot(g.competition.id, request.form['val'],
+                                                       request.form['hue'] if 'hue' in request.form else None)
+
+    return render_plots(data, page="plots/generate_histogram_and_density_plot.html")
+
+
 def render_plots(data: BytesIO, page):
     if data:
         data = data.read()

@@ -1,0 +1,39 @@
+{% extends "base_competition.html" %}
+
+{% block content_competition %}
+
+
+<div id="plot"> </div>
+<script>document.getElementById('plot').innerHTML = `{{ plot|safe }}`</script>
+<br>
+
+<h1>Гистограмма и график распределения</h1>
+
+<form method="post">
+    <div class="container">
+
+        <h1>Значение</h1>
+        {% for row_title in rows %}
+        <div class="row">
+            <input type="radio" id="{{row_title}}_val" value="{{row_title}}" name="val" style="max-width: 20px;">
+            <label for="{{row_title}}_val"><p>{{ row_title }}</p></label>
+        </div>
+        {% endfor %}
+        <script>document.getElementById('{{rows[0]}}_val').checked = true;</script>
+        <br>
+
+        <h1>Раскрасить по категориям (необязательно):</h1>
+        {% for row_title in rows %}
+        <div class="row">
+            <input type="radio" id="{{row_title}}_hue" value="{{row_title}}" name="hue" style="max-width: 20px;">
+            <label for="{{row_title}}_hue"><p>{{ row_title }}</p></label>
+        </div>
+        {% endfor %}
+
+        <br>
+        <button type="submit">Построить</button>
+    </div>
+</form>
+
+
+{% endblock %}
